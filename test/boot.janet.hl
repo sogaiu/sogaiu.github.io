@@ -1,8 +1,3 @@
-<html>
-<head>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
 <div class="highlight"><pre><span></span><span class="c1"># The core janet library</span>
 <span class="c1"># Copyright 2023 © Calvin Rose</span>
 
@@ -4280,5 +4275,3 @@
 <span class="w">  </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">&quot;const unsigned char *janet_core_image = janet_core_image_bytes;&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">&quot;size_t janet_core_image_size = sizeof(janet_core_image_bytes);&quot;</span><span class="p">))</span>
 </pre></div>
-</body>
-</html>
