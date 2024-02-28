@@ -179,7 +179,7 @@ top level and inside another form. There is also the corresponding macro
 just functions that take your source code and transform it into some other
 source code, usually automating some repetitive pattern for you.
 </p>
-<h2 id="Optional-arguments-0">Optional arguments
+<h2 id="Optional-arguments-7">Optional arguments
 </h2>
 <p>Most Janet functions will raise an error at runtime if not passed exactly the
 right number of arguments.  Sometimes, you want to define a function with
@@ -197,7 +197,7 @@ lists, where all parameters after <code class="mendoza-code">&amp;opt</code> are
 parameters. If a parameter is <code class="mendoza-code">nil</code>, <code class="mendoza-code">default</code> will redefine it to a
 default value.
 </p>
-<h2 id="Variadic-functions-0">Variadic functions
+<h2 id="Variadic-functions-7">Variadic functions
 </h2>
 <p>Janet also provides first-class support for variadic functions. Variadic
 functions can take any number of parameters, and gather them up into a tuple. To
@@ -213,7 +213,7 @@ not optional, unless specified as so with the <code class="mendoza-code">&amp;op
   (<span class="mdzsyn-coresym">+=</span> <span class="mdzsyn-symbol">accum</span> (<span class="mdzsyn-coresym">-</span> (<span class="mdzsyn-coresym">*</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-symbol">x</span>) <span class="mdzsyn-symbol">x</span>)))
  <span class="mdzsyn-symbol">accum</span>)
 
-(<span class="mdzsyn-symbol">my-adder</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>) <span class="mdzsyn-comment"># -&gt; 6</span></code></pre><h2 id="Ignoring-extra-arguments-0">Ignoring extra arguments
+(<span class="mdzsyn-symbol">my-adder</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>) <span class="mdzsyn-comment"># -&gt; 6</span></code></pre><h2 id="Ignoring-extra-arguments-7">Ignoring extra arguments
 </h2>
 <p>Sometimes you may want to have a function that can take a number of extra
 arguments but not use them. This happens because a function may be part of an
@@ -225,7 +225,7 @@ parameter in the function.
  [<span class="mdzsyn-symbol">x</span> <span class="mdzsyn-symbol">&amp;</span>]
  (<span class="mdzsyn-coresym">+</span> <span class="mdzsyn-symbol">x</span> <span class="mdzsyn-number">1</span>))
 
-(<span class="mdzsyn-symbol">ignore-extra</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span>) <span class="mdzsyn-comment"># -&gt; 2</span></code></pre><h2 id="Keyword-style-arguments-0">Keyword-style arguments
+(<span class="mdzsyn-symbol">ignore-extra</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span>) <span class="mdzsyn-comment"># -&gt; 2</span></code></pre><h2 id="Keyword-style-arguments-7">Keyword-style arguments
 </h2>
 <p>Sometimes, you want a function to have many arguments, and calling such a
 function can get confusing without naming the arguments in the call.  One
@@ -322,7 +322,7 @@ arguments in curly brackets!
    <span class="mdzsyn-keyword">:vanilla-extract</span> <span class="mdzsyn-number">0.5</span>})
 
 <span class="mdzsyn-comment"># Turn struct into an array key, value, key, value, ... and splice into a call</span>
-(<span class="mdzsyn-symbol">make-recipe-3</span> ;(<span class="mdzsyn-coresym">kvs</span> <span class="mdzsyn-symbol">args</span>))</code></pre><h2 id="Optional-Flags-0">Optional Flags
+(<span class="mdzsyn-symbol">make-recipe-3</span> ;(<span class="mdzsyn-coresym">kvs</span> <span class="mdzsyn-symbol">args</span>))</code></pre><h2 id="Optional-Flags-7">Optional Flags
 </h2>
 <p>As a matter of style, some Janet functions allow you to optionally
 pass in multiple flags from a given set, as a single argument. (A
@@ -374,7 +374,7 @@ $ my-command -a -b -c</code></pre><p>but with Janet we're using <code class="men
 (<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-symbol">my-cool-string</span> <span class="mdzsyn-string">"I ♥ Janet"</span> <span class="mdzsyn-keyword">:ub</span>))  <span class="mdzsyn-comment"># {*I ♥ JANET*}</span></code></pre><p>Built-in Janet functions that utilize this style include <code class="mendoza-code">file/open</code>,
 <code class="mendoza-code">fiber/new</code>, and <code class="mendoza-code">os/execute</code>.
 </p>
-<h2 id="Named-arguments-0">Named arguments
+<h2 id="Named-arguments-7">Named arguments
 </h2>
 <p>Starting in version 1.23.0, functions support named arguments. This is a more
 convenient syntax for keyword arguments. Functions with named arguments are
@@ -398,7 +398,7 @@ preceded by a keyword of the same name.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

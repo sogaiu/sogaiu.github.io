@@ -124,7 +124,7 @@ is a single giant C source file that can be copied into the host program's sourc
 tree. This method has many upsides, including simplicity and stability. You can
 also link to <code class="mendoza-code">libjanet.so</code> to include Janet as shared object.
 </p>
-<h2 id="Clients-0">Clients
+<h2 id="Clients-7">Clients
 </h2>
 <p>In the context of embedding Janet in a program, we can call
 the larger program a client which usually uses the Janet
@@ -151,7 +151,7 @@ example program that does this is below.
     <span class="mdzsyn-comment">// Use this to free all resources allocated by Janet.
 </span>    <span class="mdzsyn-identifier">janet_deinit</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
     <span class="mdzsyn-keyword">return</span> <span class="mdzsyn-identifier">0</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-operator">}</span></code></pre><h2 id="Basic-Janet-Functions-0">Basic Janet Functions
+<span class="mdzsyn-operator">}</span></code></pre><h2 id="Basic-Janet-Functions-7">Basic Janet Functions
 </h2>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-identifier">JANET_API</span> <span class="mdzsyn-type">int</span> <span class="mdzsyn-identifier">janet_init</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><p>Use this function to initialize global Janet state. This must be called once
 per thread if using Janet in a multithreaded environment, as all Janet global
@@ -202,7 +202,7 @@ return value or error message raised, as that is not tracked by the fiber itself
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

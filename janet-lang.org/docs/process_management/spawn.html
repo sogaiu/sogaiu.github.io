@@ -161,7 +161,7 @@ obtained via the <code class="mendoza-code">:return-code</code> key.  Accessing 
 (<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">proc</span> <span class="mdzsyn-keyword">:return-code</span>) <span class="mdzsyn-comment"># =&gt; 0</span></code></pre><p>The <code class="mendoza-code">os/proc-wait</code> function takes a single argument, <code class="mendoza-code">proc</code>,
 which should be a <code class="mendoza-code">core/process</code> value.  The return value is the
 exit code of the subprocess.  If <code class="mendoza-code">os/proc-wait</code> is called more
-than once for the same subprocess it will error.
+than once for the same <code class="mendoza-code">core/process</code> value it will error.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-comment"># prints: :sit-up</span>
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">proc</span> (<span class="mdzsyn-coresym">os/spawn</span> [<span class="mdzsyn-string">"janet"</span> <span class="mdzsyn-string">"-e"</span> <span class="mdzsyn-string">"(pp :sit-up)"</span>] <span class="mdzsyn-keyword">:p</span>))
@@ -184,14 +184,15 @@ the keys of an associated <code class="mendoza-code">core/process</code> value s
 <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and <code class="mendoza-code">:err</code>.  On UNIX-like platforms,
 there is an additional <code class="mendoza-code">:pid</code> key.
 </p>
-<p>The <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and <code class="mendoza-code">:err</code> keys for a subprocess
-provide access to the standard input, output, and error of the
-subprocess provided that corresponding choices were made via the
-<code class="mendoza-code">env</code> dictionary (i.e. table or struct) argument to
-<code class="mendoza-code">os/spawn</code>.  This means that, for example, if there is no
-key-value pair specified via <code class="mendoza-code">:in</code> in the <code class="mendoza-code">env</code> dictionary,
-then the standard input of the subprocess will not be programmatically
-accessible via the associated <code class="mendoza-code">core/process</code>'s <code class="mendoza-code">:in</code> key.
+<p>The <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and <code class="mendoza-code">:err</code> keys for a
+code`core/process` value provide access to the standard input, output,
+and error of the associated subprocess provided that corresponding
+choices were made via the <code class="mendoza-code">env</code> dictionary (i.e. table or struct)
+argument to <code class="mendoza-code">os/spawn</code>.  This means that, for example, if there
+is no key-value pair specified via <code class="mendoza-code">:in</code> in the <code class="mendoza-code">env</code>
+dictionary, then the standard input of the subprocess will not be
+programmatically accessible via the associated <code class="mendoza-code">core/process</code>'s
+<code class="mendoza-code">:in</code> key.
 </p>
 <p>The values associated with the <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and
 <code class="mendoza-code">:err</code> keys of the <code class="mendoza-code">env</code> argument can be <code class="mendoza-code">core/file</code> or
@@ -295,12 +296,12 @@ but <code class="mendoza-code">(proc :out)</code> had not and is thus closed by
 <code class="mendoza-code">os/proc-close</code>.
 </p>
 <p>The <code class="mendoza-code">os/proc-close</code> function will also attempt to wait on the
-<code class="mendoza-code">core/process</code> value if it has not been waited on already.  The
-function's return value is <code class="mendoza-code">nil</code> if waiting was not attempted and
-otherwise it is the exit code of the subprocess associated with the
-<code class="mendoza-code">core/process</code> value.
+subprocess associated with the passed <code class="mendoza-code">core/process</code> value if it
+has not been waited on already.  The function's return value is
+<code class="mendoza-code">nil</code> if waiting was not attempted and otherwise it is the exit
+code of the subprocess corresponding to the <code class="mendoza-code">core/process</code> value.
 </p>
-<h2 id="Effects-of-0">Effects of <code class="mendoza-code">:x</code>
+<h2 id="Effects-of-7">Effects of <code class="mendoza-code">:x</code>
 </h2>
 <p>If the <code class="mendoza-code">flag</code> keyword argument contains <code class="mendoza-code">x</code> for an
 invocation of <code class="mendoza-code">os/spawn</code> and the exit code of the subprocess is
@@ -338,7 +339,7 @@ with the subprocess' <code class="mendoza-code">core/process</code> value result
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

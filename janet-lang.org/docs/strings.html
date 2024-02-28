@@ -142,7 +142,7 @@ immutable.
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">monday</span> <span class="mdzsyn-string">"It is monday"</span>)
 
 <span class="mdzsyn-comment"># Now the evaluation should work - monday evaluates to "It is monday"</span>
-<span class="mdzsyn-symbol">monday</span></code></pre><h2 id="Keywords-1">Keywords
+<span class="mdzsyn-symbol">monday</span></code></pre><h2 id="Keywords-15">Keywords
 </h2>
 <p>The most common thing to do with a keyword is to check it for equality or use it
 as a key into a table or struct.
@@ -158,13 +158,13 @@ as a key into a table or struct.
     <span class="mdzsyn-keyword">:name</span> <span class="mdzsyn-string">"John"</span>
     <span class="mdzsyn-keyword">:age</span> <span class="mdzsyn-number">25</span>
     <span class="mdzsyn-keyword">:occupation</span> <span class="mdzsyn-string">"plumber"</span>
-} <span class="mdzsyn-keyword">:age</span>)</code></pre><h2 id="Symbols-1">Symbols
+} <span class="mdzsyn-keyword">:age</span>)</code></pre><h2 id="Symbols-15">Symbols
 </h2>
 <p>The difference between symbols and keywords is that keywords evaluate to
 themselves, while symbols evaluate to whatever they are bound to. To have a
 symbol evaluate to itself, it must be quoted.
 </p>
-<h2 id="Strings-1">Strings
+<h2 id="Strings-15">Strings
 </h2>
 <p>Strings can be used similarly to keywords, but their primary usage is for
 defining either text or arbitrary sequences of bytes. Strings (and symbols) in
@@ -201,7 +201,7 @@ Line 2
 that you embed UTF-8 literally in strings rather than escaping it if it is
 printable.
 </p>
-<pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-string">"Hello, 👍"</span></code></pre><h3 id="Substrings-0">Substrings
+<pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-string">"Hello, 👍"</span></code></pre><h3 id="Substrings-7">Substrings
 </h3>
 <p>The <code class="mendoza-code">string/slice</code> function is used to get substrings from a string.
 Negative integers can be used to index from the end of the string.
@@ -210,7 +210,7 @@ Negative integers can be used to index from the end of the string.
 (<span class="mdzsyn-coresym">string/slice</span> <span class="mdzsyn-string">"abcdefg"</span> <span class="mdzsyn-number">1</span>) <span class="mdzsyn-comment"># -&gt; "bcdefg"</span>
 (<span class="mdzsyn-coresym">string/slice</span> <span class="mdzsyn-string">"abcdefg"</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">5</span>) <span class="mdzsyn-comment"># -&gt; "cde"</span>
 (<span class="mdzsyn-coresym">string/slice</span> <span class="mdzsyn-string">"abcdefg"</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">-2</span>) <span class="mdzsyn-comment"># -&gt; "cdef"</span>
-(<span class="mdzsyn-coresym">string/slice</span> <span class="mdzsyn-string">"abcdefg"</span> <span class="mdzsyn-number">-4</span> <span class="mdzsyn-number">-2</span>) <span class="mdzsyn-comment"># -&gt; "ef"</span></code></pre><h3 id="Finding-substrings-0">Finding substrings
+(<span class="mdzsyn-coresym">string/slice</span> <span class="mdzsyn-string">"abcdefg"</span> <span class="mdzsyn-number">-4</span> <span class="mdzsyn-number">-2</span>) <span class="mdzsyn-comment"># -&gt; "ef"</span></code></pre><h3 id="Finding-substrings-7">Finding substrings
 </h3>
 <p>Janet has multiple functions for finding and replacing strings. The Janet string
 finding functions do not work on patterns or regular expressions; they only work
@@ -220,14 +220,14 @@ on string literals. For more flexible searching and replacing, see the
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">string/find</span> <span class="mdzsyn-string">"h"</span> <span class="mdzsyn-string">"h h h h"</span>) <span class="mdzsyn-comment">#-&gt; 0</span>
 (<span class="mdzsyn-coresym">string/find-all</span> <span class="mdzsyn-string">"h"</span> <span class="mdzsyn-string">"h h h h"</span>) <span class="mdzsyn-comment">#-&gt; @[0 2 4 6]</span>
 (<span class="mdzsyn-coresym">string/replace</span> <span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"a a a a"</span>) <span class="mdzsyn-comment">#-&gt; "b a a a"</span>
-(<span class="mdzsyn-coresym">string/replace-all</span> <span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"a a a a"</span>) <span class="mdzsyn-comment">#-&gt; "b b b b"</span></code></pre><h3 id="Splitting-strings-0">Splitting strings
+(<span class="mdzsyn-coresym">string/replace-all</span> <span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"a a a a"</span>) <span class="mdzsyn-comment">#-&gt; "b b b b"</span></code></pre><h3 id="Splitting-strings-7">Splitting strings
 </h3>
 <p>The <code class="mendoza-code">string/split</code> function can be used to split strings or buffers on a
 delimiting character. This can be used as a quick and dirty function for getting
 fields from a CSV line or words from a sentence.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">string/split</span> <span class="mdzsyn-string">","</span> <span class="mdzsyn-string">"abc,def,ghi"</span>) <span class="mdzsyn-comment">#-&gt; @["abc" "def" "ghi"]</span>
-(<span class="mdzsyn-coresym">string/split</span> <span class="mdzsyn-string">" "</span> <span class="mdzsyn-string">"abc def ghi"</span>) <span class="mdzsyn-comment">#-&gt; @["abc" "def" "ghi"]</span></code></pre><h3 id="Concatenating-strings-0">Concatenating strings
+(<span class="mdzsyn-coresym">string/split</span> <span class="mdzsyn-string">" "</span> <span class="mdzsyn-string">"abc def ghi"</span>) <span class="mdzsyn-comment">#-&gt; @["abc" "def" "ghi"]</span></code></pre><h3 id="Concatenating-strings-7">Concatenating strings
 </h3>
 <p>There are many ways to concatenate strings. The first, most common way is the
 <code class="mendoza-code">string</code> function, which takes any number of arguments and creates a string
@@ -244,7 +244,7 @@ separator. Otherwise, the behavior can be easily emulated using the
 <code class="mendoza-code">splice</code> special form.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">=</span> (<span class="mdzsyn-coresym">string</span> ;@[<span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"c"</span>])
-   (<span class="mdzsyn-coresym">string/join</span> @[<span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"c"</span>])) <span class="mdzsyn-comment"># -&gt; true</span></code></pre><h3 id="Upper-and-lower-case-0">Upper and lower case
+   (<span class="mdzsyn-coresym">string/join</span> @[<span class="mdzsyn-string">"a"</span> <span class="mdzsyn-string">"b"</span> <span class="mdzsyn-string">"c"</span>])) <span class="mdzsyn-comment"># -&gt; true</span></code></pre><h3 id="Upper-and-lower-case-7">Upper and lower case
 </h3>
 <p>The string library also provides facilities for converting strings to upper case
 and lower case. However, only ASCII characters will be transformed.  The
@@ -263,7 +263,7 @@ string that has all character in the appropriate case.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

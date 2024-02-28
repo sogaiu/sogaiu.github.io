@@ -141,7 +141,7 @@ immutable, you cannot add key-value pairs
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">st</span> {<span class="mdzsyn-keyword">:a</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-keyword">:b</span> <span class="mdzsyn-number">2</span>})
 
 (<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">st</span> <span class="mdzsyn-keyword">:a</span>) <span class="mdzsyn-comment">#-&gt; 1</span>
-(<span class="mdzsyn-symbol">st</span> <span class="mdzsyn-keyword">:b</span>) <span class="mdzsyn-comment">#-&gt; 2</span></code></pre><h2 id="Converting-a-table-to-a-struct-0">Converting a table to a struct
+(<span class="mdzsyn-symbol">st</span> <span class="mdzsyn-keyword">:b</span>) <span class="mdzsyn-comment">#-&gt; 2</span></code></pre><h2 id="Converting-a-table-to-a-struct-7">Converting a table to a struct
 </h2>
 <p>A table can be converted to a struct via the <code class="mendoza-code">table/to-struct</code> function.
 This is useful for efficiently creating a struct by first incrementally putting
@@ -150,7 +150,7 @@ key-value pairs in a table.
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">accum</span> @{})
 (<span class="mdzsyn-coresym">for</span> <span class="mdzsyn-symbol">i</span> <span class="mdzsyn-number">0</span> <span class="mdzsyn-number">100</span>
  (<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-symbol">accum</span> (<span class="mdzsyn-coresym">string</span> <span class="mdzsyn-symbol">i</span>) <span class="mdzsyn-symbol">i</span>))
-(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">my-struct</span> (<span class="mdzsyn-coresym">table/to-struct</span> <span class="mdzsyn-symbol">accum</span>))</code></pre><h2 id="Using-structs-as-keys-0">Using structs as keys
+(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">my-struct</span> (<span class="mdzsyn-coresym">table/to-struct</span> <span class="mdzsyn-symbol">accum</span>))</code></pre><h2 id="Using-structs-as-keys-7">Using structs as keys
 </h2>
 <p>Because a struct is equal to any struct with the same contents, structs make
 useful keys for tables or other structs. For example, we can use structs to
@@ -179,7 +179,7 @@ represent Cartesian points and keep a mapping from points to other values.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

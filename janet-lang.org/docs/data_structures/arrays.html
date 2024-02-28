@@ -124,13 +124,13 @@ values can be added or removed in place. Many functions in the Janet core
 library will also create arrays, such as <code class="mendoza-code">map</code>, <code class="mendoza-code">filter</code>, and
 <code class="mendoza-code">interpose</code>.
 </p>
-<h2 id="Array-length-0">Array length
+<h2 id="Array-length-7">Array length
 </h2>
 <p>The length of an array is the number of elements in the array. The last element
 of the array is therefore at index length - 1. To get the length of an array,
 use the <code class="mendoza-code">(length x)</code> function.
 </p>
-<h2 id="Creating-arrays-0">Creating arrays
+<h2 id="Creating-arrays-7">Creating arrays
 </h2>
 <p>There are many ways to create arrays in Janet, but the easiest is the array
 literal.
@@ -150,7 +150,7 @@ pre-allocate any space, so the resulting operation would be less efficient.
 (<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-keyword">:two</span>)
 (<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-keyword">:three</span>)
 (<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-keyword">:four</span>)
-<span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-comment"># -&gt; @[:one :two :three :four]</span></code></pre><h2 id="Getting-values-0">Getting values
+<span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-comment"># -&gt; @[:one :two :three :four]</span></code></pre><h2 id="Getting-values-7">Getting values
 </h2>
 <p>Arrays are not of much use without being able to get and set values inside
 them. To get values from an array, use the <code class="mendoza-code">in</code> or <code class="mendoza-code">get</code> function.
@@ -169,7 +169,7 @@ argument.
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-symbol">arr</span> <span class="mdzsyn-number">2</span>) <span class="mdzsyn-comment"># -&gt; :c</span>
 (<span class="mdzsyn-number">0</span> <span class="mdzsyn-symbol">arr</span>) <span class="mdzsyn-comment"># -&gt; :a</span></code></pre><p>Note that a non-integer key will throw an error when using <code class="mendoza-code">in</code>.
 </p>
-<h2 id="Setting-values-0">Setting values
+<h2 id="Setting-values-7">Setting values
 </h2>
 <p>To set values in an array, use either the <code class="mendoza-code">put</code> function or the <code class="mendoza-code">set</code>
 special.  The <code class="mendoza-code">put</code> function is a function that allows putting values in
@@ -188,7 +188,7 @@ mirror the syntax for getting an element out of a data structure.  Another
 difference is that while <code class="mendoza-code">put</code> returns the data structure, <code class="mendoza-code">set</code> evaluates to
 the new value.
 </p>
-<h2 id="Using-an-array-as-a-stack-0">Using an array as a stack
+<h2 id="Using-an-array-as-a-stack-7">Using an array as a stack
 </h2>
 <p>Arrays can also be used for implementing efficient stacks. The Janet core
 library provides three functions that can be used to treat an array as a stack.
@@ -209,7 +209,7 @@ returns <code class="mendoza-code">nil</code>.
 <p>Returns the last element in stack but does not remove it. Returns <code class="mendoza-code">nil</code> if
 the stack is empty.
 </p>
-<h2 id="More-array-functions-0">More array functions
+<h2 id="More-array-functions-7">More array functions
 </h2>
 <p>There are several more functions in the <code class="mendoza-code">array/</code> namespace and many more
 functions that create or manipulate arrays in the core library. A short list of
@@ -232,7 +232,7 @@ consult the <a href="/api/array.html">Array API</a>.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

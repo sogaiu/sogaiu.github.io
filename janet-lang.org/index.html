@@ -55,7 +55,7 @@
 
       
 
-<h2 id="Use-Cases-0">Use Cases
+<h2 id="Use-Cases-7">Use Cases
 </h2>
 <p>Janet makes a good system scripting language, or a language to embed in other programs.  Janet also can be used for rapid prototyping, dynamic systems, and other domains
 where dynamic languages shine. Implemented mostly in standard C99, Janet runs on Windows, Linux and macOS.
@@ -63,7 +63,7 @@ The few features that are not standard C (dynamic library loading, compiler spec
 are fairly straightforward. Janet can be easily ported to new platforms. While Janet is embeddable, it comes with a bit more out of the box than many other such easily embeddable languages
 such as threading, networking, an event loop, subprocess handling, regex-like library called PEG, and more.
 </p>
-<h2 id="Features-0">Features
+<h2 id="Features-7">Features
 </h2>
 <ul><li>Minimal setup - one binary and you are good to go!</li>
     <li>Builtin support for threads, networking, and an event loop</li>
@@ -82,7 +82,7 @@ such as threading, networking, an event loop, subprocess handling, regex-like li
     <li>Parsing Expression Grammars built in to the core library</li>
     <li>500+ functions and macros in the core library</li>
     <li>Export your projects to standalone executables with a companion build tool, jpm</li>
-    <li>Add to a project with just <code class="mendoza-code">janet.c</code> and <code class="mendoza-code">janet.h</code></li></ul><h2 id="Code-Example-0">Code Example
+    <li>Add to a project with just <code class="mendoza-code">janet.c</code> and <code class="mendoza-code">janet.h</code></li></ul><h2 id="Code-Example-7">Code Example
 </h2>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">defn</span> <span class="mdzsyn-symbol">sum3</span>
   <span class="mdzsyn-string">"Solve the 3SUM problem in O(n^2) time."</span>
@@ -101,7 +101,7 @@ such as threading, networking, an event loop, subprocess handling, regex-like li
 
 (<span class="mdzsyn-coresym">let</span> [<span class="mdzsyn-symbol">arr</span> @[<span class="mdzsyn-number">2</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">1</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">8</span> <span class="mdzsyn-number">7</span> <span class="mdzsyn-number">-3</span> <span class="mdzsyn-number">-1</span> <span class="mdzsyn-number">12</span> <span class="mdzsyn-number">-5</span> <span class="mdzsyn-number">-8</span>]]
   (<span class="mdzsyn-coresym">printf</span> <span class="mdzsyn-string">"3sum of %j: "</span> <span class="mdzsyn-symbol">arr</span>)
-  (<span class="mdzsyn-coresym">printf</span> <span class="mdzsyn-string">"%j"</span> (<span class="mdzsyn-symbol">sum3</span> <span class="mdzsyn-symbol">arr</span>)))</code></pre><h2 id="Try-It-0">Try It
+  (<span class="mdzsyn-coresym">printf</span> <span class="mdzsyn-string">"%j"</span> (<span class="mdzsyn-symbol">sum3</span> <span class="mdzsyn-symbol">arr</span>)))</code></pre><h2 id="Try-It-7">Try It
 </h2>
 
 <div id="replblock">
@@ -112,7 +112,7 @@ such as threading, networking, an event loop, subprocess handling, regex-like li
   <span id="replprompt">&gt;</span><div contenteditable="true" id="replin">(print "hello, world!")</div>
 </div>
 </div>
-<h2 id="Usage-0">Usage
+<h2 id="Usage-7">Usage
 </h2>
 <p>A REPL is launched when the <code class="mendoza-code">janet</code> binary is invoked with no arguments. Pass the <code class="mendoza-code">-h</code> flag
 to display the usage information. Individual scripts can be run with <code class="mendoza-code">janet myscript.janet</code>
@@ -148,7 +148,7 @@ Options are:
   -l lib : Import a module before processing more arguments
   -w level : Set the lint warning level - default is "normal"
   -x level : Set the lint error level - default is "none"
-  -- : Stop handling options</code></pre><h2 id="Modules-and-Libraries-0">Modules and Libraries
+  -- : Stop handling options</code></pre><h2 id="Modules-and-Libraries-7">Modules and Libraries
 </h2>
 <p>See some auxiliary projects on <a href="https://github.com/janet-lang">GitHub</a>. Here is a short list of libraries
 for Janet to help you get started with some interesting stuff. See <a href="https://github.com/janet-lang/pkgs">the Janet Package Listing</a>
@@ -171,25 +171,25 @@ for a more complete list. Packages in the listing can be installed via <code cla
     <li><a href="https://github.com/velkyel/inf-janet">inf-janet</a> - Inferior lisp Janet mode for Emacs</li>
     <li><a href="https://atom.io/packages/language-janet">language-janet</a> - Atom Editor support for Janet.</li>
     <li><a href="https://github.com/archydragon/sublime-janet">sublime-janet</a> - Sublime Text 3 &amp; 4 support for Janet.</li>
-    <li><a href="https://github.com/pepe/janet.kak">janet.kak</a> - Kakoune Editor support for Janet.</li></ul><h2 id="Community-0">Community
+    <li><a href="https://github.com/pepe/janet.kak">janet.kak</a> - Kakoune Editor support for Janet.</li></ul><h2 id="Community-7">Community
 </h2>
 <strong>NEW!</strong><p>Check out the Janet Zulip Instance at <a href="https://janet.zulipchat.com">https://janet.zulipchat.com</a> (<a href="https://janet.zulipchat.com/join/3ahdqkn5cvr6233x6ytzlcvq/">Invite Link</a>)
 </p>
 <p>Feel free to ask questions and join discussion on the <a href="https://gitter.im/janet-language/community">Janet Gitter Channel</a>.
 Gitter provides matrix and IRC bridges as well for users who prefer those.
 </p>
-<h3 id="Other-Gitter-Rooms-0">Other Gitter Rooms
+<h3 id="Other-Gitter-Rooms-7">Other Gitter Rooms
 </h3>
 <ul>
     <li><a href="https://gitter.im/janet-language/help">help</a>:
         For getting help with specific problems in the Janet language.</li>
     <li><a href="https://gitter.im/janet-language/website">website</a>:
         For discussion and help related to this website and documentation.</li>
-</ul><h3 id="Forum-0">Forum
+</ul><h3 id="Forum-7">Forum
 </h3>
 <p>We use <a href="https://github.com/janet-lang/janet/discussions">GitHub Discussions</a> as our forum, which is more suited to long-form discussion than Gitter.
 </p>
-<h3 id="Janet-Docs-0">Janet Docs
+<h3 id="Janet-Docs-7">Janet Docs
 </h3>
 <p>For help, you can also check out <a href="https://janetdocs.com">Janet Docs</a> for Janet documentation with user-provided examples. Feel free to contribute your own examples here to help fellow programmers.
 </p>
@@ -199,7 +199,7 @@ Gitter provides matrix and IRC bridges as well for users who prefer those.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

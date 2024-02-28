@@ -137,7 +137,7 @@ which show how to create simple servers and clients.
 <p>The <code class="mendoza-code">net/</code> module does not provide any protocol abstractions over sockets - this means
 no TLS and no HTTP out of the box. Such protocols need to be provided in third-party libraries.
 </p>
-<h2 id="Generic-Stream-Type-0">Generic Stream Type
+<h2 id="Generic-Stream-Type-7">Generic Stream Type
 </h2>
 <p>Most functions dealing with non-blocking IO in Janet will either accept or create an abstract type
 of <code class="mendoza-code">core/stream</code>. Streams are wrappers around file descriptors on Posix platforms, and HANDLEs
@@ -150,18 +150,18 @@ but streams do not block and do not support buffering.
 have different capabilities - for example, you can only call <code class="mendoza-code">net/accept</code> on a server, and
 only call <code class="mendoza-code">net/read</code> on a socket.
 </p>
-<h2 id="Clients-and-Servers-0">Clients and Servers
+<h2 id="Clients-and-Servers-7">Clients and Servers
 </h2>
 <p>In the following sections, we use "client" to mean a program that initiates communication with another
 program across a network, the "server", which can respond to this communication (or ignore it).
 </p>
-<h2 id="TCP-(Stream-sockets)-0">TCP (Stream sockets)
+<h2 id="TCP-(Stream-sockets)-7">TCP (Stream sockets)
 </h2>
 <p>Stream sockets provide an ordered, reliable sequence of bytes across a network. However, in order
 to send messages a connection must be established. These are the most common kind of socket and the default
 if a socket type is not specified in most functions.
 </p>
-<h3 id="Client-1">Client
+<h3 id="Client-15">Client
 </h3>
 <p>A TCP client needs to call <code class="mendoza-code">net/connect</code> to get a socket, and then can
 read from and write to that socket with <code class="mendoza-code">net/read</code> and <code class="mendoza-code">net/write</code>.
@@ -176,7 +176,7 @@ as stream sockets are the default - the other option is <code class="mendoza-cod
   (<span class="mdzsyn-coresym">pp</span> <span class="mdzsyn-symbol">res</span>))</code></pre><p>Because streams support a <code class="mendoza-code">:close</code> method, they can be used as the target of a <code class="mendoza-code">with</code> macro
 for scoped resource control.
 </p>
-<h3 id="Server-1">Server
+<h3 id="Server-15">Server
 </h3>
 <p>The <code class="mendoza-code">net/</code> module provides a few ways to create a TCP server, but
 in all cases a few steps are required.
@@ -219,13 +219,13 @@ that the accepting loop can accept the next connection as quickly as possible.
  (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">connection</span> (<span class="mdzsyn-coresym">net/accept</span> <span class="mdzsyn-symbol">my-server</span>))
  (<span class="mdzsyn-coresym">ev/call</span> <span class="mdzsyn-symbol">handler</span> <span class="mdzsyn-symbol">connection</span>))</code></pre><p>There are many possible variations, but all servers will follow this same basic structure.
 </p>
-<h2 id="UDP-(Datagram-sockets)-0">UDP (Datagram sockets)
+<h2 id="UDP-(Datagram-sockets)-7">UDP (Datagram sockets)
 </h2>
 <p>Datagram sockets provide an out-of-order, fast way to send datagrams across a network.
 Datagram sockets also provide the benefit of not needing a connection - one can send
 packets to an address without checking if that address is listening.
 </p>
-<h3 id="Client-2">Client
+<h3 id="Client-16">Client
 </h3>
 <p>A UDP client will generally create a fake connection to a server with <code class="mendoza-code">net/connect</code>, where
 the third argument is <code class="mendoza-code">:datagram</code>. The connection is "fake" because datagrams are connection-less, but
@@ -236,7 +236,7 @@ we can use this connection to encapsulate the remote address of the server. The 
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">conn</span> (<span class="mdzsyn-coresym">net/connect</span> <span class="mdzsyn-string">"127.0.0.1"</span> <span class="mdzsyn-string">"8009"</span> <span class="mdzsyn-keyword">:datagram</span>))
 (<span class="mdzsyn-keyword">:write</span> <span class="mdzsyn-symbol">conn</span> (<span class="mdzsyn-coresym">string/format</span> <span class="mdzsyn-string">"%q"</span> (<span class="mdzsyn-coresym">os/cryptorand</span> <span class="mdzsyn-number">16</span>)))
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">x</span> (<span class="mdzsyn-keyword">:read</span> <span class="mdzsyn-symbol">conn</span> <span class="mdzsyn-number">1024</span>))
-(<span class="mdzsyn-coresym">pp</span> <span class="mdzsyn-symbol">x</span>)</code></pre><h3 id="Server-2">Server
+(<span class="mdzsyn-coresym">pp</span> <span class="mdzsyn-symbol">x</span>)</code></pre><h3 id="Server-16">Server
 </h3>
 <p>A Datagram server is a bit simpler than a stream server since there is no need to manage connections.
 Instead, the program listens for packets with <code class="mendoza-code">net/recv-from</code> and sends packets with
@@ -247,7 +247,7 @@ Instead, the program listens for packets with <code class="mendoza-code">net/rec
   (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">buf</span> <span class="mdzsyn-string">@""</span>)
   (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">who</span> (<span class="mdzsyn-keyword">:recv-from</span> <span class="mdzsyn-symbol">server</span> <span class="mdzsyn-number">1024</span> <span class="mdzsyn-symbol">buf</span>))
   (<span class="mdzsyn-coresym">printf</span> <span class="mdzsyn-string">"got %q from %v, echoing!"</span> <span class="mdzsyn-symbol">buf</span> <span class="mdzsyn-symbol">who</span>)
-  (<span class="mdzsyn-keyword">:send-to</span> <span class="mdzsyn-symbol">server</span> <span class="mdzsyn-symbol">who</span> <span class="mdzsyn-symbol">buf</span>))</code></pre><h2 id="DNS-0">DNS
+  (<span class="mdzsyn-keyword">:send-to</span> <span class="mdzsyn-symbol">server</span> <span class="mdzsyn-symbol">who</span> <span class="mdzsyn-symbol">buf</span>))</code></pre><h2 id="DNS-7">DNS
 </h2>
 <p>Janet uses the Posix C function <code class="mendoza-code">getaddrinfo</code> to look up IP addresses from domain names.
 This is currently a blocking operation which can be bad in highly concurrent applications.
@@ -258,7 +258,7 @@ easy and cross platform IPv4, IPv6, and unix domain socket support.
 port further specifies the address on the same machine. In IPv4 and IPv6, host should be an IP
 address or domain name, and port should be a 16-bit number.
 </p>
-<h3 id="Unix-domain-sockets-0">Unix domain sockets
+<h3 id="Unix-domain-sockets-7">Unix domain sockets
 </h3>
 <p>Supporting platforms allow unix domain sockets by accepting <code class="mendoza-code">:unix</code> as the host, and a file name
 as the port. On linux, abstract unix domain sockets are supported if the port argument begins with "@".
@@ -267,7 +267,7 @@ as the port. On linux, abstract unix domain sockets are supported if the port ar
 (<span class="mdzsyn-coresym">net/connect</span> <span class="mdzsyn-keyword">:unix</span> <span class="mdzsyn-string">"/tmp/my.socket"</span>)
 
 <span class="mdzsyn-comment"># Connect to an abstract unix domain socket (linux only)</span>
-(<span class="mdzsyn-coresym">net/connect</span> <span class="mdzsyn-keyword">:unix</span> <span class="mdzsyn-string">"@my.socket"</span>)</code></pre><h2 id="Relationship-to-the-0">Relationship to the <code class="mendoza-code">ev/</code> module.
+(<span class="mdzsyn-coresym">net/connect</span> <span class="mdzsyn-keyword">:unix</span> <span class="mdzsyn-string">"@my.socket"</span>)</code></pre><h2 id="Relationship-to-the-7">Relationship to the <code class="mendoza-code">ev/</code> module.
 </h2>
 <p>All non-blocking operations in the <code class="mendoza-code">net/</code> module avoid blocking by yielding to the event loop.
 As such, functions in the <code class="mendoza-code">ev/</code> module for manipulating fibers, such as <code class="mendoza-code">ev/cancel</code>
@@ -284,7 +284,7 @@ event loop will prevent any networking code from progressing.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

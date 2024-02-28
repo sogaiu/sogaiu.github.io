@@ -125,7 +125,7 @@ may trigger use after free bugs. It is the author's recommendation to test your
 extension with a tool like <a href="http://www.valgrind.org/">valgrind</a> or an address sanitizer
 to ensure that your extension does not access memory in an invalid way.
 </p>
-<h2 id="Janet&#39;s-Garbage-Collector-0">Janet's Garbage Collector
+<h2 id="Janet&#39;s-Garbage-Collector-7">Janet's Garbage Collector
 </h2>
 <p>Like most dynamic languages, Janet has a garbage collector to clean up unused
 objects. The garbage collector cannot "see" objects allocated via <code class="mendoza-code">malloc</code>/<code class="mendoza-code">free</code>, only
@@ -139,7 +139,7 @@ The notable exception to this is <code class="mendoza-code">janet_call</code>, w
 for convenience. Other re-entrant functions, like <code class="mendoza-code">janet_pcall</code>, <code class="mendoza-code">janet_continue</code>, <code class="mendoza-code">janet_dobytes</code>, and
 <code class="mendoza-code">janet_dostring</code> may trigger a collection.
 </p>
-<h2 id="Adding-Janet-values-to-the-GC-Root-list-0">Adding Janet values to the GC Root list
+<h2 id="Adding-Janet-values-to-the-GC-Root-list-7">Adding Janet values to the GC Root list
 </h2>
 <p>Janet keeps a global list of objects that are considered reachable. To determine
 all reachable objects, the garbage collector will traverse this list when needed.
@@ -177,7 +177,7 @@ the garbage collector (including all nested calls to things like <code class="me
 list on a regular basis. It is also recommended to not use too much re-entrant code, as it will often suspend the garbage collector.
 For example, if you run your entire application inside a call to <code class="mendoza-code">janet_call</code>, the garbage collector will never run.
 </p>
-<h2 id="The-1">The <code class="mendoza-code">argv</code> array
+<h2 id="The-15">The <code class="mendoza-code">argv</code> array
 </h2>
 <p>Another gotcha in the memory model for the C API is the argument stack to native functions. This
 pointer to a sequence of Janet values is a pointer into the current fiber where the function arguments
@@ -212,7 +212,7 @@ handily be used for this.
     <span class="mdzsyn-keyword">return</span> <span class="mdzsyn-identifier">janet_wrap_nil</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-operator">}</span></code></pre>
 </p>
-<h2 id="Scratch-Memory-1">Scratch Memory
+<h2 id="Scratch-Memory-15">Scratch Memory
 </h2>
 <p>Many algorithms will need to allocate memory, but cleaning up the memory can be difficult to
 correctly integrate with Janet's memory model, considering that many functions in Janet's API
@@ -225,7 +225,7 @@ sure that we don't generate garbage in the common case.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">*janet_smalloc</span>(<span class="mdzsyn-symbol">size_t</span> <span class="mdzsyn-symbol">size</span>);
 <span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">*janet_srealloc</span>(<span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">*p</span>, <span class="mdzsyn-symbol">size_t</span> <span class="mdzsyn-symbol">size</span>);
-<span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">janet_sfree</span>(<span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">*p</span>)</code></pre><h2 id="GC-API-0">GC API
+<span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">janet_sfree</span>(<span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">*p</span>)</code></pre><h2 id="GC-API-7">GC API
 </h2>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">janet_mark</span>(<span class="mdzsyn-symbol">Janet</span> <span class="mdzsyn-symbol">x</span>);
 <span class="mdzsyn-symbol">void</span> <span class="mdzsyn-symbol">janet_sweep</span>(<span class="mdzsyn-symbol">void</span>);
@@ -246,7 +246,7 @@ sure that we don't generate garbage in the common case.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

@@ -133,7 +133,7 @@ of the programmer. For example, a "picky" lint message that was warning the user
 would only show up if the programmer had `:strict` mode enabled for linting. You can also use the priority
 integers directly for lint levels.
 </p>
-<h2 id="Deprecation-0">Deprecation
+<h2 id="Deprecation-7">Deprecation
 </h2>
 <p>There is also support for deprecation messages in the compiler to trigger lint warnings if a user attempts
 to use a deprecated binding. Deprecation here is the process of signaling to users that a function or
@@ -150,7 +150,7 @@ levels.
  {<span class="mdzsyn-keyword">:deprecated</span> <span class="mdzsyn-keyword">:relaxed</span>}
  <span class="mdzsyn-string">"This function is deprecated, and we really don't want you to use it."</span>
  [<span class="mdzsyn-symbol">x</span>]
- (<span class="mdzsyn-coresym">*</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-symbol">x</span>))</code></pre><h2 id="Lint-Warnings-and-Errors-0">Lint Warnings and Errors
+ (<span class="mdzsyn-coresym">*</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-symbol">x</span>))</code></pre><h2 id="Lint-Warnings-and-Errors-7">Lint Warnings and Errors
 </h2>
 <p>Whenever Janet code is being executed by the <code class="mendoza-code">run-context</code> function, there are lint thresholds for both
 errors and warnings. If a lint message has a level equal to or below the error threshold, it will be converted
@@ -165,7 +165,7 @@ threshold is 2 (relaxed and normal lints will cause a warning to print, but stri
 These threshold can also be set at the command line with the <code class="mendoza-code">-w</code> and <code class="mendoza-code">-x</code> flags for the warn and
 error thresholds respectively.
 </p>
-<h2 id="Macro-Linting-0">Macro Linting
+<h2 id="Macro-Linting-7">Macro Linting
 </h2>
 <p>Inside macros, Janet exposes an array used to collect lint messages. A function <code class="mendoza-code">maclintf</code> is provided
 to help construct error messages if some issue occurs inside a macro. <code class="mendoza-code">maclintf</code> can be used to check
@@ -192,7 +192,7 @@ use the <code class="mendoza-code">error</code> function as usual.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

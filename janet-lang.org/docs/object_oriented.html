@@ -155,7 +155,7 @@ passed as the first argument to the method. Since functions in Janet check that
 their arity is correct, make sure to include a self argument to methods, even
 when it is not used in the function body.
 </p>
-<h2 id="Factory-functions-0">Factory functions
+<h2 id="Factory-functions-7">Factory functions
 </h2>
 <p>Rather than constructors, creating objects in Janet can usually be done with a
 factory function. One can wrap the boilerplate of initializing fields and
@@ -175,7 +175,7 @@ setting the table prototype using a single function to create a nice interface.
 functions, methods, and properties. The core library does not currently provide
 such functionality, as it should be fairly simple to customize.
 </p>
-<h2 id="Structs-3">Structs
+<h2 id="Structs-24">Structs
 </h2>
 <p>In addition to tables, Structs may also be used as objects. As of Janet version
 1.19.0, structs can have prototypes as well as tables, although in prior version
@@ -201,7 +201,7 @@ that goes for prototypes as well. Structs can only inherit from other structs, n
   <span class="mdzsyn-keyword">:honk</span> (<span class="mdzsyn-coresym">fn</span> [<span class="mdzsyn-symbol">self</span> <span class="mdzsyn-symbol">msg</span>] (<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-string">"Car says: "</span> <span class="mdzsyn-symbol">msg</span>))})
 
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">my-car</span> (<span class="mdzsyn-coresym">struct/with-proto</span> <span class="mdzsyn-symbol">Car</span> <span class="mdzsyn-keyword">:color</span> <span class="mdzsyn-keyword">:silver</span>))
-(<span class="mdzsyn-keyword">:honk</span> <span class="mdzsyn-symbol">my-car</span> <span class="mdzsyn-string">"beep"</span>)</code></pre><h2 id="Abstract-types-0">Abstract types
+(<span class="mdzsyn-keyword">:honk</span> <span class="mdzsyn-symbol">my-car</span> <span class="mdzsyn-string">"beep"</span>)</code></pre><h2 id="Abstract-types-7">Abstract types
 </h2>
 <p>While tables make good objects, Janet also strives for good interoperation with
 C.  Many C libraries expose pseudo object-oriented interfaces to their
@@ -224,7 +224,7 @@ abstract type <code class="mendoza-code">:core/file</code> can be manipulated wi
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:41:38 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>
