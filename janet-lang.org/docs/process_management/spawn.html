@@ -134,7 +134,7 @@ arguments.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-comment"># prints: :salutations</span>
 <span class="mdzsyn-comment"># the returned value, proc, is a core/process value</span>
-(<span class="mdzsyn-coresym">let</span> [<span class="mdzsyn-symbol">proc</span> (<span class="mdzsyn-coresym">os/spawn</span> [<span class="mdzsyn-string">"janet"</span> <span class="mdzsyn-string">"-e"</span> <span class="mdzsyn-string">"(pp :salutaions)"</span>] <span class="mdzsyn-keyword">:p</span>)]
+(<span class="mdzsyn-coresym">let</span> [<span class="mdzsyn-symbol">proc</span> (<span class="mdzsyn-coresym">os/spawn</span> [<span class="mdzsyn-string">"janet"</span> <span class="mdzsyn-string">"-e"</span> <span class="mdzsyn-string">"(pp :salutations)"</span>] <span class="mdzsyn-keyword">:p</span>)]
   (<span class="mdzsyn-coresym">type</span> <span class="mdzsyn-symbol">proc</span>)) <span class="mdzsyn-comment"># =&gt; :core/process</span></code></pre><h2><code class="mendoza-code">core/process</code> and <code class="mendoza-code">os/proc-wait</code>
 </h2>
 <p>Passing the <code class="mendoza-code">core/process</code> value to the <code class="mendoza-code">os/proc-wait</code>
@@ -143,9 +143,9 @@ execution.  This is sometimes referred to as "rejoining" the
 subprocess.
 </p>
 <p>The main reason for "waiting" is so that the operating system can
-release resources appropriately.  Not "waiting" appropriately can lead
-to resources remaining unreclaimed and this can become a problem for a
-running system because it may run out of usable resources.
+release resources.  Not "waiting" appropriately can lead to resources
+remaining unreclaimed and this can become a problem for a running
+system because it may run out of usable resources.
 </p>
 <p>Once "waiting" has completed, the exit code for the subprocess can be
 obtained via the <code class="mendoza-code">:return-code</code> key.  Accessing this key before
@@ -184,17 +184,17 @@ the keys of an associated <code class="mendoza-code">core/process</code> value s
 <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and <code class="mendoza-code">:err</code>.  On UNIX-like platforms,
 there is an additional <code class="mendoza-code">:pid</code> key.
 </p>
-<p>The <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, <code class="mendoza-code">:err</code> keys for a subprocess provide
-access to the standard input, output, and error of the subprocess
-provided that corresponding choices were made via the <code class="mendoza-code">env</code>
-dictionary argument to <code class="mendoza-code">os/spawn</code>.  This means that, for example,
-if there is no key-value pair specified via <code class="mendoza-code">:in</code> in the
-<code class="mendoza-code">env</code> dictionary, then the standard input of the subprocess will
-not be programmatically accessible via the associated
-<code class="mendoza-code">core/process</code>'s <code class="mendoza-code">:in</code> key.
+<p>The <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and <code class="mendoza-code">:err</code> keys for a subprocess
+provide access to the standard input, output, and error of the
+subprocess provided that corresponding choices were made via the
+<code class="mendoza-code">env</code> dictionary (i.e. table or struct) argument to
+<code class="mendoza-code">os/spawn</code>.  This means that, for example, if there is no
+key-value pair specified via <code class="mendoza-code">:in</code> in the <code class="mendoza-code">env</code> dictionary,
+then the standard input of the subprocess will not be programmatically
+accessible via the associated <code class="mendoza-code">core/process</code>'s <code class="mendoza-code">:in</code> key.
 </p>
-<p>The values associated with the <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, <code class="mendoza-code">:err</code>
-keys of the <code class="mendoza-code">env</code> argument should be <code class="mendoza-code">core/file</code> or
+<p>The values associated with the <code class="mendoza-code">:in</code>, <code class="mendoza-code">:out</code>, and
+<code class="mendoza-code">:err</code> keys of the <code class="mendoza-code">env</code> argument can be <code class="mendoza-code">core/file</code> or
 <code class="mendoza-code">core/stream</code> values.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">out-file</span> (<span class="mdzsyn-coresym">file/temp</span>))
@@ -300,13 +300,13 @@ function's return value is <code class="mendoza-code">nil</code> if waiting was 
 otherwise it is the exit code of the subprocess associated with the
 <code class="mendoza-code">core/process</code> value.
 </p>
-<h2 id="Effects-of-18">Effects of <code class="mendoza-code">:x</code>
+<h2 id="Effects-of">Effects of <code class="mendoza-code">:x</code>
 </h2>
 <p>If the <code class="mendoza-code">flag</code> keyword argument contains <code class="mendoza-code">x</code> for an
 invocation of <code class="mendoza-code">os/spawn</code> and the exit code of the subprocess is
 non-zero, calling a function such as <code class="mendoza-code">os/proc-wait</code>,
 <code class="mendoza-code">os/proc-close</code>, and <code class="mendoza-code">os/proc-kill</code> (if invoked to wait)
-results in an error.
+with the subprocess' <code class="mendoza-code">core/process</code> value results in an error.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">proc</span>
   (<span class="mdzsyn-coresym">os/spawn</span> [<span class="mdzsyn-string">"janet"</span> <span class="mdzsyn-string">"-e"</span> <span class="mdzsyn-string">"(os/exit 1)"</span>] <span class="mdzsyn-keyword">:px</span>))
@@ -338,7 +338,7 @@ results in an error.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

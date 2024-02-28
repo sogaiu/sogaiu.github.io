@@ -134,7 +134,7 @@ to communicate directly is through message passing with threaded channels.
 </p>
 <p>By default, a Janet program will not exit until all threads have terminated.
 </p>
-<h2 id="Creating-threads-18">Creating threads
+<h2 id="Creating-threads">Creating threads
 </h2>
 <p>The most primitive way to create a thread is <code class="mendoza-code">(ev/thread fiber &amp;opt value flags supervisor)</code>.
 This will start and wait for a message containing a function that it will run as the
@@ -161,7 +161,7 @@ block of code in a new thread, return immediately, and
   (<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-string">"New thread started!"</span>))
 
 (<span class="mdzsyn-coresym">ev/do-thread</span>
-  (<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-string">"New thread started!"</span>))</code></pre><h2 id="Sending-and-receiving-messages-18">Sending and receiving messages
+  (<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-string">"New thread started!"</span>))</code></pre><h2 id="Sending-and-receiving-messages">Sending and receiving messages
 </h2>
 <p>Threads in Janet do not share a memory heap and must communicate via threaded
 channels. Threaded channels behave much like normal channels in the <code class="mendoza-code">ev/</code> module, with
@@ -180,7 +180,7 @@ used for both communication and coordination between threads.
 
 (<span class="mdzsyn-coresym">repeat</span> <span class="mdzsyn-number">10</span>
  (<span class="mdzsyn-coresym">os/sleep</span> <span class="mdzsyn-number">0.2</span>)
- (<span class="mdzsyn-coresym">ev/give</span> <span class="mdzsyn-symbol">thread-channel</span> <span class="mdzsyn-keyword">:item</span>))</code></pre><h2 id="Thread-Supervisors-18">Thread Supervisors
+ (<span class="mdzsyn-coresym">ev/give</span> <span class="mdzsyn-symbol">thread-channel</span> <span class="mdzsyn-keyword">:item</span>))</code></pre><h2 id="Thread-Supervisors">Thread Supervisors
 </h2>
 <p>Threaded channels can also be used as supervisors for spawned threads. A supervisor is a channel
 that receives messages whenever
@@ -231,7 +231,7 @@ otherwise.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

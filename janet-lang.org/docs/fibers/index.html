@@ -163,7 +163,7 @@ untrapped signals are simply propagated to the previous calling fiber.
 (<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-coresym">fiber/status</span> <span class="mdzsyn-symbol">f</span>)) <span class="mdzsyn-comment"># -&gt; :pending</span>
 (<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-coresym">resume</span> <span class="mdzsyn-symbol">f</span>)) <span class="mdzsyn-comment"># -&gt; prints 5</span>
 (<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-coresym">fiber/status</span> <span class="mdzsyn-symbol">f</span>)) <span class="mdzsyn-comment"># -&gt; :dead</span>
-(<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-coresym">resume</span> <span class="mdzsyn-symbol">f</span>)) <span class="mdzsyn-comment"># -&gt; throws an error because the fiber is dead</span></code></pre><h2 id="Using-fibers-to-capture-errors-18">Using fibers to capture errors
+(<span class="mdzsyn-coresym">print</span> (<span class="mdzsyn-coresym">resume</span> <span class="mdzsyn-symbol">f</span>)) <span class="mdzsyn-comment"># -&gt; throws an error because the fiber is dead</span></code></pre><h2 id="Using-fibers-to-capture-errors">Using fibers to capture errors
 </h2>
 <p>Besides being used as coroutines, fibers can be used to implement error handling
 (i.e. exceptions).
@@ -202,7 +202,7 @@ an error clause is evaluated.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

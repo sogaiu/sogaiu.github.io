@@ -124,7 +124,7 @@ to change its size. It is recommended to use the provided API functions to mutat
 aside from setting a single element, though. For getting and setting values in the
 array, use <code class="mendoza-code">array-&gt;data[index]</code> directly.
 </p>
-<h2 id="Definition-75">Definition
+<h2 id="Definition">Definition
 </h2>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-comment">/* A dynamic array type. */</span>
 <span class="mdzsyn-type">struct</span> <span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-operator">{</span>
@@ -133,7 +133,7 @@ array, use <code class="mendoza-code">array-&gt;data[index]</code> directly.
     <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">capacity</span><span class="mdzsyn-operator">;</span>
     <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">data</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-operator">}</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-keyword">typedef</span> <span class="mdzsyn-type">struct</span> <span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-identifier">JanetArray</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Functions-75">Functions
+<span class="mdzsyn-keyword">typedef</span> <span class="mdzsyn-type">struct</span> <span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-identifier">JanetArray</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Functions">Functions
 </h2>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-identifier">JANET_API</span> <span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_array</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">capacity</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><p>Creates a new, empty array with enough preallocated space for
 capacity elements.
@@ -167,7 +167,7 @@ if the array is empty.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

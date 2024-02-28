@@ -155,10 +155,11 @@ error if the subprocess' exit code is non-zero.
     (<span class="mdzsyn-coresym">eprint</span> <span class="mdzsyn-string">"non-zero exit code"</span>)))</code></pre><h3><code class="mendoza-code">env</code>
 </h3>
 <p>If <code class="mendoza-code">flags</code> contains <code class="mendoza-code">e</code>, <code class="mendoza-code">os/execute</code> should take a
-third argument, <code class="mendoza-code">env</code>, a table or struct, mapping environment
-variable names to values.  The subprocess will be started using an
-environment constructed from <code class="mendoza-code">env</code>.  If <code class="mendoza-code">flags</code> does not
-contain <code class="mendoza-code">e</code>, the current environment is inherited.
+third argument, <code class="mendoza-code">env</code>, a dictionary (i.e. table or struct),
+mapping environment variable names to values.  The subprocess will be
+started using an environment constructed from <code class="mendoza-code">env</code>.  If
+<code class="mendoza-code">flags</code> does not contain <code class="mendoza-code">e</code>, the current environment is
+inherited.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-comment"># prints "SITTING"</span>
 <span class="mdzsyn-comment"># also returns 0</span>
@@ -183,7 +184,7 @@ any combination of just <code class="mendoza-code">:in</code>, <code class="mend
 
 (<span class="mdzsyn-coresym">file/read</span> <span class="mdzsyn-symbol">of</span> <span class="mdzsyn-keyword">:all</span>) <span class="mdzsyn-comment"># =&gt; @"tada!\n"</span>
 
-(<span class="mdzsyn-coresym">file/close</span> <span class="mdzsyn-symbol">of</span>) <span class="mdzsyn-comment"># =&gt; nil</span></code></pre><h3 id="Caveat-18">Caveat
+(<span class="mdzsyn-coresym">file/close</span> <span class="mdzsyn-symbol">of</span>) <span class="mdzsyn-comment"># =&gt; nil</span></code></pre><h3 id="Caveat">Caveat
 </h3>
 <p>Although it may appear to be possible to successfully use
 <code class="mendoza-code">core/stream</code> values with <code class="mendoza-code">os/execute</code> in some cases, it may
@@ -204,7 +205,7 @@ thus not a reliable choice and is thus not recommended.  The
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

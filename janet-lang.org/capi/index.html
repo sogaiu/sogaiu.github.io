@@ -133,12 +133,12 @@ host languages, like Go, that expect all code to be fully re-entrant on any thre
 This design choice, however, makes the Janet APIs more pleasant to use in languages
 like C and C++, as there is no need to pass around a context object to all api functions.
 </p>
-<h2 id="What-defines-the-C-API?-18">What defines the C API?
+<h2 id="What-defines-the-C-API?">What defines the C API?
 </h2>
 <p>The C API is defined by the header <code class="mendoza-code">janet.h</code>, which should be included
 by programs to both embed Janet in a larger program, or to write a Janet module.
 </p>
-<h2 id="Using-The-Amalgamation-18">Using The Amalgamation
+<h2 id="Using-The-Amalgamation">Using The Amalgamation
 </h2>
 <p>When integrating Janet into a host project (usually some larger application, but it could be
 a small wrapper around Janet), it is convenient to be able to add only a few source files
@@ -153,7 +153,7 @@ used in the standalone interpreter, but not usually needed for host programs.
 <pre class="mendoza-codeblock"><code>cc -std=c99 -Wall -Werror -O2 -fPIC -shared janet.c shell.c -o janet -lm -ldl -lrt -lpthread</code></pre><p>The exact flags required will depend on the system and on the configuration of the amalgamation.
 For example, linking to pthreads is not needed if JANET_SINGLE_THREADED is defined in <code class="mendoza-code">janetconf.h</code>.
 </p>
-<h2 id="Writing-a-Module-18">Writing a Module
+<h2 id="Writing-a-Module">Writing a Module
 </h2>
 <p>The easiest way to get started with the Janet C API is to write a Janet native
 module. A native module is native code that can be loaded dynamically at runtime
@@ -180,7 +180,7 @@ in the interpreter.
 native function called <code class="mendoza-code">myfun</code>. The module is called <code class="mendoza-code">mymod</code>, although
 when importing the module, the user can rename it to whatever he or she likes.
 </p>
-<h3 id="Compiling-the-Module-18">Compiling the Module
+<h3 id="Compiling-the-Module">Compiling the Module
 </h3>
 <p>Once you have written you native code a file <code class="mendoza-code">mymod.c</code>, you will need to
 compile it with your system's C compiler. The easiest way to do this is to use <code class="mendoza-code">jpm</code> and write a <code class="mendoza-code">project.janet</code> file.
@@ -207,7 +207,7 @@ import your module and use it.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

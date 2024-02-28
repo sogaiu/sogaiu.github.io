@@ -118,12 +118,12 @@
         </div>
         
 
-<h2 id="Installation-18">Installation
+<h2 id="Installation">Installation
 </h2>
 <p>Janet is prebuilt for a few systems, but if you want to develop Janet, run Janet
 on a non-x86 system, or get the latest, you must build Janet from source.
 </p>
-<h3 id="Windows-56">Windows
+<h3 id="Windows">Windows
 </h3>
 <p>The recommended way to install on Windows is just to run the installer from the
 releases page.  A Scoop package was maintained previously, but ongoing support
@@ -136,26 +136,26 @@ work for a 64-bit build, and from the Developer Command Prompt should work for
 32-bit builds.  Using these specific command prompts for <code class="mendoza-code">jpm</code> simply lets
 <code class="mendoza-code">jpm</code> use the Microsoft compiler to compile native modules on install.
 </p>
-<h3 id="Linux-18">Linux
+<h3 id="Linux">Linux
 </h3>
-<h4 id="Arch-Linux-18">Arch Linux
+<h4 id="Arch-Linux">Arch Linux
 </h4>
 <p>You can install either the latest git version or the latest stable version for
 Arch Linux from the Arch user repositories with
 <a href="https://aur.archlinux.org/packages/janet-lang-git/">janet-lang-git</a> or
 <a href="https://aur.archlinux.org/packages/janet-lang">janet-lang</a>.
 </p>
-<h4 id="Other-Linux-18">Other Linux
+<h4 id="Other-Linux">Other Linux
 </h4>
 <p>See instructions below for compiling and installing from source.
 </p>
-<h3 id="macOS-18">macOS
+<h3 id="macOS">macOS
 </h3>
 <p>Janet is available for installation through the
 <a href="https://brew.sh/">homebrew</a> package manager as <code class="mendoza-code">janet</code>. The latest
 version from git can be installed by adding the <code class="mendoza-code">--HEAD</code> flag.
 </p>
-<pre class="mendoza-codeblock"><code>brew install janet</code></pre><h2 id="Compiling-and-running-from-source-18">Compiling and running from source
+<pre class="mendoza-codeblock"><code>brew install janet</code></pre><h2 id="Compiling-and-running-from-source">Compiling and running from source
 </h2>
 <p>If you would like the latest version of Janet, are trying to run Janet on a
 platform that is not macOS or Windows, or would like to help develop Janet, you
@@ -163,7 +163,7 @@ can build Janet from source.  Janet only uses Make and batch files to compile on
 POSIX and Windows respectively. To configure Janet, edit the header file
 <code class="mendoza-code">src/conf/janetconf.h</code> before compilation.
 </p>
-<h3 id="Non-root-install-(macOS-and-Unix-like)-18">Non-root install (macOS and Unix-like)
+<h3 id="Non-root-install-(macOS-and-Unix-like)">Non-root install (macOS and Unix-like)
 </h3>
 <p>To build and install Janet (and jpm) to a local or temporary directory tree instead of the default
 prefix of <code class="mendoza-code">/usr/local</code>, set the <code class="mendoza-code">PREFIX</code> environment variable while building and installing.
@@ -174,7 +174,7 @@ You will like likely also want to update your path to point to <code class="mend
 make -j
 make install
 make install-jpm-git # you can also do this manually by reading the janet-lang/jpm.git readme
-export PATH="$PREFIX"/bin:"$PATH"</code></pre><h3 id="macOS-and-Unix-like-18">macOS and Unix-like
+export PATH="$PREFIX"/bin:"$PATH"</code></pre><h3 id="macOS-and-Unix-like">macOS and Unix-like
 </h3>
 <p>On most platforms, use Make to build Janet. The resulting files (including the
 <code class="mendoza-code">janet</code> binary) will be in the <code class="mendoza-code">build/</code> directory.
@@ -189,14 +189,14 @@ to customize.
 <a href="https://github.com/janet-lang/jpm">jpm repository</a>, and from within that
 directory, run:
 </p>
-<pre class="mendoza-codeblock"><code>[sudo] janet bootstrap.janet</code></pre><h3 id="FreeBSD-18">FreeBSD
+<pre class="mendoza-codeblock"><code>[sudo] janet bootstrap.janet</code></pre><h3 id="FreeBSD">FreeBSD
 </h3>
 <p>FreeBSD build instructions are the same as the Unix-like build instructions, but
 you need <code class="mendoza-code">gmake</code> and <code class="mendoza-code">gcc</code> to compile.
 </p>
 <pre class="mendoza-codeblock"><code>cd somewhere/my/projects/janet
 gmake CC=gcc
-gmake test CC=gcc</code></pre><h3 id="Windows-57">Windows
+gmake test CC=gcc</code></pre><h3 id="Windows-0">Windows
 </h3>
 <ol><li>Install <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15#">Visual Studio</a>
         or <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15#">Visual Studio Build Tools</a></li>
@@ -212,14 +212,14 @@ gmake test CC=gcc</code></pre><h3 id="Windows-57">Windows
         need to be on the PATH)</li>
     <li><code class="mendoza-code">cd</code> to the directory with Janet</li>
     <li>Run <code class="mendoza-code">build_win dist</code></li>
-    <li>Then, lastly, execute the resulting <code class="mendoza-code">.msi</code> executable</li></ol><h3 id="Meson-18">Meson
+    <li>Then, lastly, execute the resulting <code class="mendoza-code">.msi</code> executable</li></ol><h3 id="Meson">Meson
 </h3>
 <p>Janet also has a build file for <a href="https://mesonbuild.com/">Meson</a>, a
 cross-platform build system. This is not currently the main supported build
 system, but should work on any system that supports Meson. Meson also provides
 much better IDE integration than Make or batch files.
 </p>
-<h3 id="Small-builds-18">Small builds
+<h3 id="Small-builds">Small builds
 </h3>
 <p>If you want to cut down on the size of the final Janet binary or library, you
 need to omit features and build with <code class="mendoza-code">-Os</code>. With Meson, this can look
@@ -236,7 +236,7 @@ ninja
 # ./janet should be about 40% smaller than the default build as of 2019-10-13</code></pre><p>You can also do this with the Makefile by editing <code class="mendoza-code">CFLAGS</code>, and
 uncommenting some lines in <code class="mendoza-code">src/conf/janetconf.h</code>.
 </p>
-<h2 id="First-program-18">First program
+<h2 id="First-program">First program
 </h2>
 <p>Following tradition, a simple Janet program will print "Hello, World!".
 </p>
@@ -267,7 +267,7 @@ first value in the tuple, and the arguments passed to it are in the rest of the
 tuple. While this may be familiar in function calls, in Janet this idea extends
 to arithmetic and all control forms.
 </p>
-<h2 id="Second-program-18">Second program
+<h2 id="Second-program">Second program
 </h2>
 <p>If you create a "main" function, <code class="mendoza-code">janet</code> will automatically call that
 for you when you run your script. Here's an example that prints out the
@@ -289,7 +289,7 @@ to the whomever's named first on the command line:
 <pre class="mendoza-codeblock"><code>$ ./foo.janet World Famous Fries
 ("./foo.janet" "World" "Famous" "Fries")
 4
-Hello, World!</code></pre><h2 id="The-core-library-18">The core library
+Hello, World!</code></pre><h2 id="The-core-library">The core library
 </h2>
 <p>Janet has a built in core library of over 300 functions and macros at the time
 of writing.  For efficient programming in Janet, it is good to be able to make
@@ -313,7 +313,7 @@ the <a href="/doc.html">core library API</a> on the website.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 27, 2024 at 13:20:23 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>
