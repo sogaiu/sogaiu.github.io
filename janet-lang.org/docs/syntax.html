@@ -142,7 +142,7 @@ entered as such in the parser.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-constant">nil</span>
 <span class="mdzsyn-constant">true</span>
-<span class="mdzsyn-constant">false</span></code></pre><h2 id="Symbols-0">Symbols
+<span class="mdzsyn-constant">false</span></code></pre><h2 id="Symbols-2">Symbols
 </h2>
 <p>Janet symbols are represented as a sequence of alphanumeric characters not
 starting with a digit or a colon. They can also contain the characters <code class="mendoza-code">!</code>,
@@ -164,7 +164,7 @@ separates the name of the module from the name of the definition in the module.
 <span class="mdzsyn-symbol">*****</span>
 <span class="mdzsyn-symbol">!%$^*__--__._+++===-crazy-symbol</span>
 <span class="mdzsyn-symbol">*global-var*</span>
-<span class="mdzsyn-symbol">你好</span></code></pre><h2 id="Keywords-0">Keywords
+<span class="mdzsyn-symbol">你好</span></code></pre><h2 id="Keywords-2">Keywords
 </h2>
 <p>Janet keywords are like symbols that begin with the character <code class="mendoza-code">:</code>. However,
 they are used differently and treated by the compiler as a constant rather than
@@ -176,7 +176,7 @@ or pieces of syntax in macros.
 <span class="mdzsyn-keyword">:0x0x0x0</span>
 <span class="mdzsyn-keyword">:a-keyword</span>
 <span class="mdzsyn-keyword">::</span>
-<span class="mdzsyn-keyword">:</span></code></pre><h2 id="Numbers">Numbers
+<span class="mdzsyn-keyword">:</span></code></pre><h2 id="Numbers-0">Numbers
 </h2>
 <p>Janet numbers are represented by IEEE 754 floating point numbers.  The syntax is
 similar to that of many other languages as well. Numbers can be written in base
@@ -197,7 +197,7 @@ common. The radix must be written in base 10, and can be any integer from 2 to
 <span class="mdzsyn-number">18r123C</span>
 <span class="mdzsyn-number">11raaa&amp;a</span>
 <span class="mdzsyn-number">1_000_000</span>
-<span class="mdzsyn-number">0xbeef</span></code></pre><h2 id="Strings-0">Strings
+<span class="mdzsyn-number">0xbeef</span></code></pre><h2 id="Strings-2">Strings
 </h2>
 <p>Strings in Janet are surrounded by double quotes. Strings are 8-bit clean,
 meaning they can contain any arbitrary sequence of bytes, including embedded 0s.
@@ -224,7 +224,7 @@ lets one define a multiline string that does not contain newline characters.
 <span class="mdzsyn-string">"This
 is
 a
-string"</span></code></pre><h3 id="Long-strings">Long-strings
+string"</span></code></pre><h3 id="Long-strings-0">Long-strings
 </h3>
 <p>An alternative way of representing strings in Janet is the long-string, or the
 backquote-delimited string. A long-string can be defined to start with a certain
@@ -249,7 +249,7 @@ a string.
 `</span></code></pre><p>Long-strings are often used for docstrings, as described in the
 <a href="./documentation.html">Documentation chapter</a>.
 </p>
-<h2 id="Buffers">Buffers
+<h2 id="Buffers-0">Buffers
 </h2>
 <p>Buffers are similar to strings except they are mutable data structures. Strings
 in Janet cannot be mutated after being created, whereas a buffer can be changed
@@ -261,7 +261,7 @@ long string, but the buffer must be prefixed with the <code class="mendoza-code"
 <span class="mdzsyn-string">@``Another buffer``</span>
 <span class="mdzsyn-string">@`
 Yet another buffer
-`</span></code></pre><h2 id="Tuples">Tuples
+`</span></code></pre><h2 id="Tuples-0">Tuples
 </h2>
 <p>Tuples are a sequence of whitespace separated values surrounded by either
 parentheses or brackets. The parser considers any of the characters ASCII 32,
@@ -275,13 +275,13 @@ a tuple if it has square brackets to let the compiler know to compile the tuple
 into a constructor. The programmer can check if a tuple has brackets via the
 <code class="mendoza-code">tuple/type</code> function.
 </p>
-<h2 id="Arrays">Arrays
+<h2 id="Arrays-0">Arrays
 </h2>
 <p>Arrays are the same as tuples, but have a leading <code class="mendoza-code">@</code> to indicate
 mutability.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">@(<span class="mdzsyn-keyword">:one</span> <span class="mdzsyn-keyword">:two</span> <span class="mdzsyn-keyword">:three</span>)
-@[<span class="mdzsyn-keyword">:one</span> <span class="mdzsyn-keyword">:two</span> <span class="mdzsyn-keyword">:three</span>]</code></pre><h2 id="Structs-1">Structs
+@[<span class="mdzsyn-keyword">:one</span> <span class="mdzsyn-keyword">:two</span> <span class="mdzsyn-keyword">:three</span>]</code></pre><h2 id="Structs-4">Structs
 </h2>
 <p>Structs are represented by a sequence of whitespace-delimited key-value pairs
 surrounded by curly braces. The sequence is defined as key1, value1, key2,
@@ -294,7 +294,7 @@ struct.
 {<span class="mdzsyn-keyword">:key1</span> <span class="mdzsyn-string">"value1"</span> <span class="mdzsyn-keyword">:key2</span> <span class="mdzsyn-keyword">:value2</span> <span class="mdzsyn-keyword">:key3</span> <span class="mdzsyn-number">3</span>}
 {(<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>) (<span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>)}
 {@[] @[]}
-{<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>}</code></pre><h2 id="Tables">Tables
+{<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>}</code></pre><h2 id="Tables-0">Tables
 </h2>
 <p>Tables have the same syntax as structs, except they have the <code class="mendoza-code">@</code> prefix to
 indicate that they are mutable.
@@ -303,12 +303,12 @@ indicate that they are mutable.
 @{<span class="mdzsyn-keyword">:key1</span> <span class="mdzsyn-string">"value1"</span> <span class="mdzsyn-keyword">:key2</span> <span class="mdzsyn-keyword">:value2</span> <span class="mdzsyn-keyword">:key3</span> <span class="mdzsyn-number">3</span>}
 @{(<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>) (<span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>)}
 @{@[] @[]}
-@{<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>}</code></pre><h2 id="Comments">Comments
+@{<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> <span class="mdzsyn-number">4</span> <span class="mdzsyn-number">5</span> <span class="mdzsyn-number">6</span>}</code></pre><h2 id="Comments-0">Comments
 </h2>
 <p>Comments begin with a <code class="mendoza-code">#</code> character and continue until the end of the line.
 There are no multiline comments.
 </p>
-<h2 id="Shorthand">Shorthand
+<h2 id="Shorthand-0">Shorthand
 </h2>
 <p>Often called reader macros in other programming languages, Janet provides
 several shorthand notations for some forms. In Janet, this syntax is referred to
@@ -338,7 +338,7 @@ as prefix forms and they are not extensible.
 <code class="mendoza-code">''x</code>  (<code class="mendoza-code">(quote (quote x))</code>), or <code class="mendoza-code">,;x</code>  
 (<code class="mendoza-code">(unquote (splice x))</code>).
 </p>
-<h2 id="Syntax-Highlighting">Syntax Highlighting
+<h2 id="Syntax-Highlighting-0">Syntax Highlighting
 </h2>
 <p>For syntax highlighting, there is some preliminary Vim syntax highlighting in
 <a href="https://github.com/janet-lang/janet.vim">janet.vim</a>.  Generic lisp syntax
@@ -346,7 +346,7 @@ highlighting should, however, provide good results. One can also generate a
 <code class="mendoza-code">janet.tmLanguage</code> file for other programs with <code class="mendoza-code">make grammar</code> from
 the Janet source code.
 </p>
-<h2 id="Grammar">Grammar
+<h2 id="Grammar-0">Grammar
 </h2>
 <p>For anyone looking for a more succinct description of the grammar, a PEG grammar
 for recognizing Janet source code is below. The PEG syntax is itself similar to
@@ -400,7 +400,7 @@ EBNF.  More info on the PEG syntax can be found in the <a href="/docs/peg.html">
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

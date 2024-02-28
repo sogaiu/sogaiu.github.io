@@ -130,7 +130,7 @@ the C API was designed with this use in mind. Most of the core's C functions wer
 Functions written like this will also give consistent
 error messages when called improperly, creating a better experience for users.
 </p>
-<h2 id="C-Function-Signature">C Function Signature
+<h2 id="C-Function-Signature-0">C Function Signature
 </h2>
 <p>All C Functions must conform to the <code class="mendoza-code">JanetCFunction</code> type defined in <code class="mendoza-code">janet.h</code>. <code class="mendoza-code">argc</code>
 is the number of arguments the function was called with, and <code class="mendoza-code">argv</code> is an array of arguments with
@@ -138,7 +138,7 @@ length <code class="mendoza-code">argc</code>. Any API call that may re-size the
 <code class="mendoza-code">janet_pcall</code>, <code class="mendoza-code">janet_call</code>, <code class="mendoza-code">janet_continue</code>, and <code class="mendoza-code">janet_fiber_*</code> should happen
 after all arguments have been extracted from <code class="mendoza-code">argv</code>.
 </p>
-<pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-keyword">static</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">cfun_myfunc</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Asserting-Arity">Asserting Arity
+<pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-keyword">static</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">cfun_myfunc</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Asserting-Arity-0">Asserting Arity
 </h2>
 <p>Janet comes with 2 arity-asserting API functions. These functions simply
 check the value of argc and provide helpful error messages if it is invalid.
@@ -151,7 +151,7 @@ variadic arguments.
 <p>Functions that are single arity should use <code class="mendoza-code">janet_fixarity</code>, which is equivalent
 to <code class="mendoza-code">janet_arity(argc, arity, arity)</code>, but provides a slightly nicer error message.
 </p>
-<h2 id="Extracting-Arguments">Extracting Arguments
+<h2 id="Extracting-Arguments-0">Extracting Arguments
 </h2>
 <p>For many wrappers, the most laborious task is safely converting Janet values into C types in a safe
 and flexible manner. We would like to verify that all arguments are of the correct type, and only then
@@ -164,7 +164,7 @@ it for you. If the argument is the wrong type, a descriptive error will be raise
 the <code class="mendoza-code">nth</code> argument. These functions will not bounds check the <code class="mendoza-code">argv</code> array, so be sure to check your
 arity before calling these functions.
 </p>
-<h3 id="Getter-functions">Getter functions
+<h3 id="Getter-functions-0">Getter functions
 </h3>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-type">double</span> <span class="mdzsyn-identifier">janet_getnumber</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_getarray</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
@@ -223,7 +223,7 @@ These functions perform bounds checks on the argument array (assuming <code clas
  * construct a new value if none is provided */</span>
 <span class="mdzsyn-identifier">JanetBuffer</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_optbuffer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">dflt_len</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-identifier">JanetTable</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_opttable</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">dflt_len</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_optarray</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">dflt_len</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Panicking">Panicking
+<span class="mdzsyn-identifier">JanetArray</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_optarray</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-keyword">const</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">n</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">dflt_len</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Panicking-0">Panicking
 </h2>
 <p>If at any point during execution of the C function an error is hit, you may want to abort execution
 and raise an error. Errors should not be expected to be frequent, but they should not segfault
@@ -266,7 +266,7 @@ to specify the maximum nesting depth to print.
     <tr><td>%m</td> <td>pretty print a Janet value (no truncation)</td> <td><code class="mendoza-code">Janet</code></td></tr>
     <tr><td>%M</td> <td>pretty print a Janet value (no truncation) with color</td> <td><code class="mendoza-code">Janet</code></td></tr>
     <tr><td>%n</td> <td>pretty print a Janet value (no truncation) on one line</td> <td><code class="mendoza-code">Janet</code></td></tr>
-    <tr><td>%N</td> <td>pretty print a Janet value (no truncation) on one line with color</td> <td><code class="mendoza-code">Janet</code></td></tr></table><h2 id="Scratch-Memory-0">Scratch Memory
+    <tr><td>%N</td> <td>pretty print a Janet value (no truncation) on one line with color</td> <td><code class="mendoza-code">Janet</code></td></tr></table><h2 id="Scratch-Memory-2">Scratch Memory
 </h2>
 <p>Panicking is implemented with C's <code class="mendoza-code">setjmp</code> and <code class="mendoza-code">longjmp</code>, which means that resources are not
 cleaned up when a panic happens. To avoid leaking memory, stick to using Janet's data structures, which
@@ -276,7 +276,7 @@ use Janet's scratch memory API to allocate memory. The scratch memory API expose
 </p>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_smalloc</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">size_t</span> <span class="mdzsyn-identifier">size</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">janet_srealloc</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">mem</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-type">size_t</span> <span class="mdzsyn-identifier">size</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-type">void</span> <span class="mdzsyn-identifier">janet_sfree</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">mem</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Example">Example
+<span class="mdzsyn-type">void</span> <span class="mdzsyn-identifier">janet_sfree</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">mem</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Example-0">Example
 </h2>
 <pre class="mendoza-codeblock"><code data-language="c"><span class="mdzsyn-comment">/* Set a value in an array with an index that wraps around */</span>
 <span class="mdzsyn-keyword">static</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">cfun_array_ringset</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">argc</span><span class="mdzsyn-operator">,</span> <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">argv</span><span class="mdzsyn-operator">)</span> <span class="mdzsyn-operator">{</span>
@@ -310,7 +310,7 @@ use Janet's scratch memory API to allocate memory. The scratch memory API expose
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

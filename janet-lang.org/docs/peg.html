@@ -157,7 +157,7 @@ know the PEG syntax (example is translated from a
 (<span class="mdzsyn-coresym">peg/match</span> <span class="mdzsyn-symbol">ip-address</span> <span class="mdzsyn-string">"0.0.0.0"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span>
 (<span class="mdzsyn-coresym">peg/match</span> <span class="mdzsyn-symbol">ip-address</span> <span class="mdzsyn-string">"elephant"</span>) <span class="mdzsyn-comment"># -&gt; nil</span>
 (<span class="mdzsyn-coresym">peg/match</span> <span class="mdzsyn-symbol">ip-address</span> <span class="mdzsyn-string">"256.0.0.0"</span>) <span class="mdzsyn-comment"># -&gt; nil</span>
-(<span class="mdzsyn-coresym">peg/match</span> <span class="mdzsyn-symbol">ip-address</span> <span class="mdzsyn-string">"0.0.0.0more text"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span></code></pre><h2 id="The-API">The API
+(<span class="mdzsyn-coresym">peg/match</span> <span class="mdzsyn-symbol">ip-address</span> <span class="mdzsyn-string">"0.0.0.0more text"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span></code></pre><h2 id="The-API-0">The API
 </h2>
 <p>The <code class="mendoza-code">peg</code> module has few functions because the complexity is exposed
 through the pattern syntax. Note that there is only one match function,
@@ -177,7 +177,7 @@ character of text. A PEG can either be a compiled PEG object or PEG source.
 <p>Compiles a PEG source data structure into a new PEG. Throws an error if there
 are problems with the PEG code.
 </p>
-<h2 id="Primitive-patterns">Primitive patterns
+<h2 id="Primitive-patterns-0">Primitive patterns
 </h2>
 <p>Larger patterns are built up with primitive patterns, which recognize individual
 characters, string literals, or a given number of characters. A character in
@@ -214,7 +214,7 @@ languages.
 (<span class="mdzsyn-coresym">peg/match</span> '(<span class="mdzsyn-coresym">range</span> <span class="mdzsyn-string">"AZ"</span>) <span class="mdzsyn-string">"F"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span>
 (<span class="mdzsyn-coresym">peg/match</span> '(<span class="mdzsyn-coresym">range</span> <span class="mdzsyn-string">"AZ"</span>) <span class="mdzsyn-string">"-"</span>) <span class="mdzsyn-comment"># -&gt; nil</span>
 (<span class="mdzsyn-coresym">peg/match</span> '(<span class="mdzsyn-coresym">set</span> <span class="mdzsyn-string">"AZ"</span>) <span class="mdzsyn-string">"F"</span>) <span class="mdzsyn-comment"># -&gt; nil</span>
-(<span class="mdzsyn-coresym">peg/match</span> '(<span class="mdzsyn-coresym">set</span> <span class="mdzsyn-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>) <span class="mdzsyn-string">"F"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span></code></pre><h2 id="Combining-patterns">Combining patterns
+(<span class="mdzsyn-coresym">peg/match</span> '(<span class="mdzsyn-coresym">set</span> <span class="mdzsyn-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>) <span class="mdzsyn-string">"F"</span>) <span class="mdzsyn-comment"># -&gt; @[]</span></code></pre><h2 id="Combining-patterns-0">Combining patterns
 </h2>
 <p>These primitive patterns can be combined with several combinators to match a
 wide number of languages. These combinators can be thought of as the looping and
@@ -311,7 +311,7 @@ succeeds. If no sub-pattern succeeds, then the whole pattern fails. Note that
 this means that the order of <code class="mendoza-code">x y z</code> in choice <strong>does</strong> matter. If
 <code class="mendoza-code">y</code> matches everything that <code class="mendoza-code">z</code> matches, <code class="mendoza-code">z</code> will never succeed.
 </p>
-<h2 id="Captures">Captures
+<h2 id="Captures-0">Captures
 </h2>
 <p>So far we have only been concerned with "does this text match this language?".
 This is useful, but it is often more useful to extract data from text if it does
@@ -445,7 +445,7 @@ grammars simpler.
         <td> Capture a number parsed from the matched pattern. This uses the
          same parser as Janet itself, so it supports all numeric notation
          allowed in Janet files. To tag the capture without forcing a
-         particular base, use <code class="mendoza-code">(number patt nil :tag)</code>. </td></tr></table><h2 id="Grammars-and-recursion">Grammars and recursion
+         particular base, use <code class="mendoza-code">(number patt nil :tag)</code>. </td></tr></table><h2 id="Grammars-and-recursion-0">Grammars and recursion
 </h2>
 <p>The feature that makes PEGs so much more powerful than pattern matching
 solutions like (vanilla) regex is mutual recursion.  To do recursion in a PEG,
@@ -472,7 +472,7 @@ recursion into iteration via tail-call optimization, but some patterns may fail
 on large inputs. It is also possible to construct (very poorly written) patterns
 that will result in long loops and be very slow in general.
 </p>
-<h2 id="Built-in-patterns">Built-in patterns
+<h2 id="Built-in-patterns-0">Built-in patterns
 </h2>
 <p>Besides the primitive patterns and pattern combinators given above, the
 <code class="mendoza-code">peg</code> module also provides a default grammar with a handful of commonly
@@ -510,7 +510,7 @@ that maps from the alias name to the expanded form. You can even add your own
 aliases here which are then available for all PEGs in the program. Modifiying
 this table will not affect already compiled PEGs.
 </p>
-<h2 id="String-searching-and-other-idioms">String searching and other idioms
+<h2 id="String-searching-and-other-idioms-0">String searching and other idioms
 </h2>
 <p>Although all pattern matching is done in anchored mode, operations like global
 substitution and searching can be implemented with the PEG module. A simple
@@ -548,7 +548,7 @@ accumulate special <code class="mendoza-code">(%)</code>.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

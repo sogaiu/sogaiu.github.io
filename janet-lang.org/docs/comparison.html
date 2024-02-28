@@ -123,7 +123,7 @@ establish equality or ordering.  Janet has two types of comparison operators,
 which we refer to as "primitive" comparison operators, and "polymorphic"
 comparison operators, respectively.
 </p>
-<h2 id="Primitive-Comparison-Operators">Primitive Comparison Operators
+<h2 id="Primitive-Comparison-Operators-0">Primitive Comparison Operators
 </h2>
 <p>The primitive comparison operators are <code class="mendoza-code">=</code>, <code class="mendoza-code">&lt;</code>, <code class="mendoza-code">&lt;=</code>, <code class="mendoza-code">&gt;</code>,
 <code class="mendoza-code">&gt;=</code>.  In the simple case, each operator can be used to compare two values
@@ -159,7 +159,7 @@ comparing Janet int/s64 types to Janet numbers.
 type number (e.g. "numeric value") then, use the polymorphic comparison
 operators, described below.
 </p>
-<h2 id="Polymorphic-Comparison-Operators">Polymorphic Comparison Operators
+<h2 id="Polymorphic-Comparison-Operators-0">Polymorphic Comparison Operators
 </h2>
 <p>The polymorphic comparison operators are used for comparing different types in
 some manner rather than just by internal Janet type number.  The semantics are
@@ -182,7 +182,7 @@ will "do the right thing".
 (<span class="mdzsyn-coresym">compare&lt;</span> <span class="mdzsyn-number">3</span> (<span class="mdzsyn-coresym">int/u64</span> <span class="mdzsyn-number">2</span>))            <span class="mdzsyn-comment"># false -- semantically 3 is not &lt; 2</span></code></pre><p>In general the polymorphic operators are slower than the primitive ones, so
 use the primitive ones unless you need the extra polymorphic features.
 </p>
-<h2 id="Implementing-Polymorphic-Comparison">Implementing Polymorphic Comparison
+<h2 id="Implementing-Polymorphic-Comparison-0">Implementing Polymorphic Comparison
 </h2>
 <p>If you just want to use the polymorphic comparison for the built in types, you
 can skip this section, which is about how to implement polymorphic comparison
@@ -208,7 +208,7 @@ information on the latter see the <a href="/docs/object_oriented.html">object
 oriented programming section</a> and the <a href="/docs/prototypes.html">prototypes
 section</a> for more information on developing object oriented methods on tables.
 </p>
-<h2 id="Deep-Equality-Operator">Deep Equality Operator
+<h2 id="Deep-Equality-Operator-0">Deep Equality Operator
 </h2>
 <p>The primitive <code class="mendoza-code">=</code> operator does not compare the contents of mutable structures (arrays, tables, and buffers).
 Instead, it checks if the two values are the same object.
@@ -248,7 +248,7 @@ This function compares buffers like strings, and recursively compares arrays and
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

@@ -125,7 +125,7 @@ versatile data structures. They can be used to accumulate small strings into a
 large string, to implement a bitset, or to represent sound or images in a
 program.
 </p>
-<h2 id="Creating-buffers">Creating buffers
+<h2 id="Creating-buffers-0">Creating buffers
 </h2>
 <p>A buffer literal looks like a string literal, but prefixed with an at symbol
 <code class="mendoza-code">@</code>.
@@ -139,7 +139,7 @@ program.
 
 (<span class="mdzsyn-symbol">make-buffer</span>) <span class="mdzsyn-comment"># -&gt; @"a new buffer"</span>
 (<span class="mdzsyn-coresym">=</span> (<span class="mdzsyn-symbol">make-buffer</span>) (<span class="mdzsyn-symbol">make-buffer</span>)) <span class="mdzsyn-comment"># -&gt; false</span>
-<span class="mdzsyn-comment"># All buffers are unique - buffers are equal only to themselves.</span></code></pre><h2 id="Getting-bytes-from-a-buffer">Getting bytes from a buffer
+<span class="mdzsyn-comment"># All buffers are unique - buffers are equal only to themselves.</span></code></pre><h2 id="Getting-bytes-from-a-buffer-0">Getting bytes from a buffer
 </h2>
 <p>To get bytes from a buffer, use the <code class="mendoza-code">get</code> function that works on all
 built-in data structures. Bytes in a buffer are indexed from 0, and each byte is
@@ -164,7 +164,7 @@ sub strings (or sub buffers) from inside any sequence of bytes.
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">buf2</span> (<span class="mdzsyn-coresym">buffer/slice</span> <span class="mdzsyn-symbol">buf</span> <span class="mdzsyn-number">2</span>)) <span class="mdzsyn-comment"># -&gt; @"cdefg"</span>
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">buf3</span> (<span class="mdzsyn-coresym">buffer/slice</span> <span class="mdzsyn-symbol">buf</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">-2</span>)) <span class="mdzsyn-comment"># -&gt; @"cdef"</span>
 
-<span class="mdzsyn-comment"># string/slice works the same way, but returns strings.</span></code></pre><h2 id="Setting-bytes-in-a-buffer">Setting bytes in a buffer
+<span class="mdzsyn-comment"># string/slice works the same way, but returns strings.</span></code></pre><h2 id="Setting-bytes-in-a-buffer-0">Setting bytes in a buffer
 </h2>
 <p>Buffers are mutable, meaning we can add bytes or change bytes in an already
 created buffer. Use the <code class="mendoza-code">put</code> function to set individual bytes in a buffer
@@ -180,7 +180,7 @@ range provided.
 (<span class="mdzsyn-coresym">set</span> (<span class="mdzsyn-symbol">b</span> <span class="mdzsyn-number">10</span>) <span class="mdzsyn-number">97</span>) <span class="mdzsyn-comment">#-&gt; 97</span></code></pre><p>The main difference between <code class="mendoza-code">set</code> and <code class="mendoza-code">put</code> is that <code class="mendoza-code">set</code> will
 return the byte value, whereas <code class="mendoza-code">put</code> will return the buffer value.
 </p>
-<h2 id="Pushing-bytes-to-a-buffer">Pushing bytes to a buffer
+<h2 id="Pushing-bytes-to-a-buffer-0">Pushing bytes to a buffer
 </h2>
 <p>There are also many functions to push data into a buffer. Since buffers are
 commonly used to accumulate data, there are a variety of functions for pushing
@@ -202,7 +202,7 @@ data into a buffer.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

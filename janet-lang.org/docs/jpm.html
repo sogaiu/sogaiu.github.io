@@ -132,7 +132,7 @@ variable. Ideally, jpm should be installed to the same tree as Janet,
 although this is not strictly required. See the README in jpm's
 repository for more information.
 </p>
-<h2 id="Updating-JPM">Updating JPM
+<h2 id="Updating-JPM-0">Updating JPM
 </h2>
 <p>Once installed and configured, JPM can update itself from the git repository at any time.
 </p>
@@ -143,7 +143,7 @@ repository for more information.
     with some functionality that is difficult to duplicate, like compiling Janet
     source code and all imported modules into a statically linked executable for
     distribution.
-</p><h2 id="Glossary">Glossary
+</p><h2 id="Glossary-0">Glossary
 </h2>
 <p>A self-contained unit of Janet source code as recognized by <code class="mendoza-code">jpm</code>
 is called a project. A project is a directory containing a
@@ -155,12 +155,12 @@ executables as it wants. Each of these recipes builds an
 artifact. Artifacts are the output files that will either be
 distributed or installed on the end-user or developer's machine.
 </p>
-<h2 id="Building-projects-with">Building projects with <code class="mendoza-code">jpm</code>
+<h2 id="Building-projects-with-0">Building projects with <code class="mendoza-code">jpm</code>
 </h2>
 <p>Once you have the project on your machine, building the various artifacts should
 be pretty simple.
 </p>
-<h4 id="Global-install">Global install
+<h4 id="Global-install-0">Global install
 </h4>
 <pre class="mendoza-codeblock"><code>sudo jpm deps
 jpm build
@@ -169,7 +169,7 @@ sudo jpm install</code></pre><p>(On Windows, <code class="mendoza-code">sudo</co
 depends on whether you installed <code class="mendoza-code">janet</code> to a directory owned by the root
 user.)
 </p>
-<h4 id="User-local-install">User local install
+<h4 id="User-local-install-0">User local install
 </h4>
 <p>The JANET_TREE environment variable can be used to set the tree the jpm installs things to.
 By default, running <code class="mendoza-code">janet</code> from the command line separately will not use modules in
@@ -180,7 +180,7 @@ jpm deps
 jpm build
 jpm test
 jpm install
-# alternative: jpm --tree=$HOME/.local/jpm_tree deps</code></pre><h4 id="Project-local-install">Project local install
+# alternative: jpm --tree=$HOME/.local/jpm_tree deps</code></pre><h4 id="Project-local-install-0">Project local install
 </h4>
 <p>JPM also has some flags to install dependencies to a tree local to a project. Dependencies will
 be installed to ./jpm_tree/lib (and binaries installed to ./jpm_tree/bin) when passing the <code class="mendoza-code">-l</code>
@@ -190,7 +190,7 @@ flag to jpm.
 jpm -l build
 jpm -l test
 # Run a janet interpreter in the local environment with access to all dependencies installed.
-jpm -l janet</code></pre><h3 id="Dependencies">Dependencies
+jpm -l janet</code></pre><h3 id="Dependencies-0">Dependencies
 </h3>
 <p><code class="mendoza-code">jpm deps</code> is a command that installs Janet libraries that the project
     depends on recursively.  It will automatically fetch, build, and install all
@@ -198,7 +198,7 @@ jpm -l janet</code></pre><h3 id="Dependencies">Dependencies
     which you need to have installed on your machine to install dependencies. If
     you don't have git you are free to manually obtain the requisite
     dependencies and install them manually with <code class="mendoza-code">sudo jpm install</code>.
-</p><h3 id="Building">Building
+</p><h3 id="Building-0">Building
 </h3>
 <p>Next, we use the <code class="mendoza-code">jpm build</code> command to build artifacts. All built
 artifacts will be created in the <code class="mendoza-code">build</code> subdirectory of the current
@@ -211,7 +211,7 @@ POSIX systems, the compiler is <code class="mendoza-code">cc</code>.
 to only rebuild what is needed on a rebuild. If this fails for any reason, you
 can delete the entire build directory with <code class="mendoza-code">jpm clean</code> to reset things.
 </p>
-<h4 id="Windows-1">Windows
+<h4 id="Windows-4">Windows
 </h4>
 <p>For Windows, the C compiler used by <code class="mendoza-code">jpm</code> is <code class="mendoza-code">cl.exe</code>, which is part
 of MSVC. You can get it with Visual Studio, or standalone with the C and C++
@@ -219,14 +219,14 @@ Build Tools from Microsoft. You will then need to run <code class="mendoza-code"
 Developer Command Prompt, or source <code class="mendoza-code">vcvars64.bat</code> in your shell to add
 <code class="mendoza-code">cl.exe</code> to the PATH.
 </p>
-<h3 id="Testing">Testing
+<h3 id="Testing-0">Testing
 </h3>
 <p>Once we have built our software, it is a good idea to test it to verify that it
 works on the current machine. <code class="mendoza-code">jpm test</code> will run all Janet scripts in the
 <code class="mendoza-code">test</code> directory of the project and return a non-zero exit code if any
 fail.
 </p>
-<h3 id="Installing">Installing
+<h3 id="Installing-0">Installing
 </h3>
 <p>Finally, once we have built our software and tested that it works, we can
 install it on our system. For an executable, this means copying it to the
@@ -238,7 +238,7 @@ to via the <code class="mendoza-code">--modpath</code> option, and the path to i
 <code class="mendoza-code">--binpath</code> option. These need to be given before the subcommand
 <code class="mendoza-code">install</code>.
 </p>
-<h2 id="The-0">The <code class="mendoza-code">project.janet</code> file
+<h2 id="The-2">The <code class="mendoza-code">project.janet</code> file
 </h2>
 <p>To create your own software in Janet, it is a good idea to understand what the
 <code class="mendoza-code">project.janet</code> file is and how it defines rules for building, testing, and
@@ -251,7 +251,7 @@ rules, including <code class="mendoza-code">"install"</code>, <code class="mendo
 <code class="mendoza-code">"test"</code>. These are a few of the rules that <code class="mendoza-code">jpm</code> expects
 <code class="mendoza-code">project.janet</code> to create when executed.
 </p>
-<h3 id="Declaring-a-project">Declaring a project
+<h3 id="Declaring-a-project-0">Declaring a project
 </h3>
 <p>Use the <code class="mendoza-code">declare-project</code> as the first <code class="mendoza-code">declare-</code> macro towards the
 beginning of your <code class="mendoza-code">project.janet</code> file. You can also pass in any metadata
@@ -263,7 +263,7 @@ here.
   <span class="mdzsyn-keyword">:description</span> <span class="mdzsyn-string">"a library that does things"</span> <span class="mdzsyn-comment"># some example metadata.</span>
 
   <span class="mdzsyn-comment"># Optional urls to git repositories that contain required artifacts.</span>
-  <span class="mdzsyn-keyword">:dependencies</span> [<span class="mdzsyn-string">"https://github.com/janet-lang/json.git"</span>])</code></pre><h3 id="Creating-a-module">Creating a module
+  <span class="mdzsyn-keyword">:dependencies</span> [<span class="mdzsyn-string">"https://github.com/janet-lang/json.git"</span>])</code></pre><h3 id="Creating-a-module-0">Creating a module
 </h3>
 <p>A 100% Janet library is the easiest kind of software to distribute in Janet.
 Since it does not need to be built and since installing it means simply moving
@@ -276,7 +276,7 @@ the library in <code class="mendoza-code">project.janet</code>.
   <span class="mdzsyn-comment"># Often will just be a single file or single directory.</span>
   <span class="mdzsyn-keyword">:source</span> [<span class="mdzsyn-string">"mylib.janet"</span>])</code></pre><p>For information on writing modules, see <a href="/docs/modules.html">the modules docpage</a>.
 </p>
-<h3 id="Creating-a-native-module">Creating a native module
+<h3 id="Creating-a-native-module-0">Creating a native module
 </h3>
 <p>Once you have written your C code that defines your native module (see the
 <a href="/capi/embedding.html">embedding</a> page on how to do this), you must declare
@@ -294,7 +294,7 @@ recommended to use the <code class="mendoza-code">:embedded</code> argument, as 
 multiple artifacts, one for a pure C native module and one for Janet source
 code.
 </p>
-<h3 id="Creating-an-executable">Creating an executable
+<h3 id="Creating-an-executable-0">Creating an executable
 </h3>
 <p>The declaration for an executable file is pretty simple.
 </p>
@@ -351,7 +351,7 @@ at runtime, though.
 <p>For an example Janet executable built with <code class="mendoza-code">jpm</code>, see
 <a href="https://github.com/bakpakin/littleserver">https://github.com/bakpakin/littleserver</a>.
 </p>
-<h2 id="Custom-Trees">Custom Trees
+<h2 id="Custom-Trees-0">Custom Trees
 </h2>
 <p>For per-project or per-user development (as opposed to system-wide development), you can use
 custom jpm trees rather than a system default by passing the <code class="mendoza-code">--tree=&lt;somewhere&gt;</code> argument
@@ -362,7 +362,7 @@ a tree <code class="mendoza-code">./jpm_tree</code>, you can use the <code class
 <pre class="mendoza-codeblock"><code>jpm --tree=/opt/jpm_tree deps
 jpm --tree=/opt/jpm_tree install spork
 jpm -l deps
-jpm -l test</code></pre><h2 id="Versioning-and-Library-Bundling">Versioning and Library Bundling
+jpm -l test</code></pre><h2 id="Versioning-and-Library-Bundling-0">Versioning and Library Bundling
 </h2>
 <p>JPM does not do any semantic version resolution at the moment. Instead, it is recommended to make all changes
 to libraries as backwards-compatible as possible, and release new libraries for breaking changes in almost all
@@ -393,7 +393,7 @@ development.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

@@ -129,7 +129,7 @@ unwrapped type, while operations that are generic to Janet values will
 typically expect a <code class="mendoza-code">Janet</code>. It is important to be able to convert between
 these two representations in order to interact with Janet from C.
 </p>
-<h2 id="Wrapping-Functions">Wrapping Functions
+<h2 id="Wrapping-Functions-0">Wrapping Functions
 </h2>
 <p>These functions convert a C type into a generic Janet value.
 </p>
@@ -151,7 +151,7 @@ these two representations in order to interact with Janet from C.
 <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">janet_wrap_table</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">JanetTable</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">janet_wrap_abstract</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">janet_wrap_pointer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">void</span> <span class="mdzsyn-operator">*</span><span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">janet_wrap_integer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Unwrapping-Functions">Unwrapping Functions
+<span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">janet_wrap_integer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Unwrapping-Functions-0">Unwrapping Functions
 </h2>
 <p>These function convert from a <code class="mendoza-code">Janet</code> to a
 more specific C type. If the Janet being unwrapped is
@@ -172,7 +172,7 @@ not actually the returned type, the behavior is undefined.
 <span class="mdzsyn-identifier">JanetCFunction</span> <span class="mdzsyn-identifier">janet_unwrap_cfunction</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-type">int</span> <span class="mdzsyn-identifier">janet_unwrap_boolean</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
 <span class="mdzsyn-type">double</span> <span class="mdzsyn-identifier">janet_unwrap_number</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span>
-<span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">janet_unwrap_integer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Janet-Types">Janet Types
+<span class="mdzsyn-type">int32_t</span> <span class="mdzsyn-identifier">janet_unwrap_integer</span><span class="mdzsyn-operator">(</span><span class="mdzsyn-identifier">Janet</span> <span class="mdzsyn-identifier">x</span><span class="mdzsyn-operator">)</span><span class="mdzsyn-operator">;</span></code></pre><h2 id="Janet-Types-0">Janet Types
 </h2>
 <p>Before unwrapping a Janet value, one should check the value is of the
 correct Janet type. Janet provides two macros for checking this, <code class="mendoza-code">janet_checktype</code>
@@ -249,7 +249,7 @@ would call
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

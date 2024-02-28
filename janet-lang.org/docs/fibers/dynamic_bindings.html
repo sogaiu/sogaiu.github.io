@@ -130,18 +130,18 @@ version 0.5.0 on a per-fiber basis &mdash; each fiber contains an
 environment table that can be queried for values. Using table prototypes, we can
 easily emulate dynamic scoping.
 </p>
-<h2 id="Setting-a-value">Setting a value
+<h2 id="Setting-a-value-0">Setting a value
 </h2>
 <p>To set a dynamic binding, use the <code class="mendoza-code">setdyn</code> function.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet"><span class="mdzsyn-comment"># Sets a dynamic binding :my-var to 10 in the current fiber.</span>
-(<span class="mdzsyn-coresym">setdyn</span> <span class="mdzsyn-keyword">:my-var</span> <span class="mdzsyn-number">10</span>)</code></pre><h2 id="Getting-a-value">Getting a value
+(<span class="mdzsyn-coresym">setdyn</span> <span class="mdzsyn-keyword">:my-var</span> <span class="mdzsyn-number">10</span>)</code></pre><h2 id="Getting-a-value-0">Getting a value
 </h2>
 <p>To get a dynamically-scoped binding, use the <code class="mendoza-code">dyn</code> function.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">dyn</span> <span class="mdzsyn-keyword">:my-var</span>) <span class="mdzsyn-comment"># returns nil</span>
 (<span class="mdzsyn-coresym">setdyn</span> <span class="mdzsyn-keyword">:my-var</span> <span class="mdzsyn-number">10</span>)
-(<span class="mdzsyn-coresym">dyn</span> <span class="mdzsyn-keyword">:my-var</span>) <span class="mdzsyn-comment"># returns 10</span></code></pre><h2 id="Creating-a-dynamic-scope">Creating a dynamic scope
+(<span class="mdzsyn-coresym">dyn</span> <span class="mdzsyn-keyword">:my-var</span>) <span class="mdzsyn-comment"># returns 10</span></code></pre><h2 id="Creating-a-dynamic-scope-0">Creating a dynamic scope
 </h2>
 <p>Now that we can get and set dynamic bindings, we need to know how to create
 dynamic scopes themselves. To do this, we can create a new fiber and then use
@@ -177,7 +177,7 @@ makes it much clearer in the common case.
 <span class="mdzsyn-comment"># prints "Inside with-dyns: (1 2 3)"</span>
 (<span class="mdzsyn-coresym">with-dyns</span> [<span class="mdzsyn-keyword">:pretty-format</span> <span class="mdzsyn-string">"Inside with-dyns: %.20P"</span>]
   (<span class="mdzsyn-coresym">pp</span> [<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>]))
-(<span class="mdzsyn-coresym">pp</span> [<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>]) <span class="mdzsyn-comment"># prints "(1 2 3)"</span></code></pre><h2 id="When-to-use-dynamic-bindings">When to use dynamic bindings
+(<span class="mdzsyn-coresym">pp</span> [<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span>]) <span class="mdzsyn-comment"># prints "(1 2 3)"</span></code></pre><h2 id="When-to-use-dynamic-bindings-0">When to use dynamic bindings
 </h2>
 <p>Dynamic bindings should be used when you want to pass around an
 implicit, global context, especially when you want to automatically
@@ -188,7 +188,7 @@ manually trying to detect errors and unset the context. Consider the
 following example code, written once with a global var and once with a
 dynamic binding.
 </p>
-<h3 id="Using-a-global-var">Using a global var
+<h3 id="Using-a-global-var-0">Using a global var
 </h3>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">var</span> <span class="mdzsyn-symbol">*my-binding*</span> <span class="mdzsyn-number">10</span>)
 
@@ -208,7 +208,7 @@ dynamic binding.
 but even that may have subtle bugs if the fiber yields but is never resumed.
 However, there is a better solution with dynamic bindings.
 </p>
-<h3 id="Using-a-dynamic-binding">Using a dynamic binding
+<h3 id="Using-a-dynamic-binding-0">Using a dynamic binding
 </h3>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">defn</span> <span class="mdzsyn-symbol">may-error</span>
  <span class="mdzsyn-string">"A function that may error."</span>
@@ -223,7 +223,7 @@ errors and any other signal that a fiber may emit.  In general, prefer dynamic
 bindings over global vars. Global vars are mainly useful for scripts or truly
 program-global configuration.
 </p>
-<h2 id="Advanced-use-cases">Advanced use cases
+<h2 id="Advanced-use-cases-0">Advanced use cases
 </h2>
 <p>Dynamic bindings work by a table associated with each fiber, called the fiber
 environment (often "env" for short). This table can be accessed by all
@@ -259,7 +259,7 @@ macro.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

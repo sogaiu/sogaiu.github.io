@@ -132,7 +132,7 @@ pointers from those modules, and call those function pointers. On top
 of this, there is a macro-based abstraction that makes it convenient
 to declare bindings and is sufficient in most cases.
 </p>
-<h2 id="Primitive-Types">Primitive Types
+<h2 id="Primitive-Types-0">Primitive Types
 </h2>
 <p>Primitive types in the FFI syntax are specified with keywords, and map
 directly to primitive type in C. There are a number of aliases for
@@ -187,7 +187,7 @@ and keywords, as these are expected to be immutable. Buffers can be mutated free
 (either directly or in a struct) will return raw, opaque pointers. Data in the pointer can be inspected with <code class="mendoza-code">ffi/read</code>
 if needed.
 </p>
-<h2 id="Structs">Structs
+<h2 id="Structs-2">Structs
 </h2>
 <p>FFI struct types (not to be confused with Janet structs) can be created with the <code class="mendoza-code">ffi/struct</code> function. All <code class="mendoza-code">ffi/</code> functions that take type arguments
 will implicitly create structs if passed tuples for convenience, but if you are going to reuse a struct definition, it
@@ -214,7 +214,7 @@ somewhere in the struct definition.
 struct-returning functions will return tuples. To
 map C structs to other types (such as a Janet struct), you must do the conversion manually.
 </p>
-<h2 id="Array-Types">Array Types
+<h2 id="Array-Types-0">Array Types
 </h2>
 <p>Array types are defined with a Janet array of one or two elements - the first element is the
 type of array elements, and the optional second
@@ -227,7 +227,7 @@ which can be used to implement flexible array members as defined in C99.
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">ffi/size</span> @[<span class="mdzsyn-keyword">:int</span> <span class="mdzsyn-number">10</span>]) <span class="mdzsyn-comment"># -&gt; 40</span>
 (<span class="mdzsyn-coresym">ffi/size</span> @[<span class="mdzsyn-keyword">:int</span> <span class="mdzsyn-number">0</span>]) <span class="mdzsyn-comment"># -&gt; 0</span>
 (<span class="mdzsyn-coresym">ffi/size</span> [<span class="mdzsyn-keyword">:char</span>]) <span class="mdzsyn-comment"># -&gt; 1</span>
-(<span class="mdzsyn-coresym">ffi/size</span> [<span class="mdzsyn-keyword">:char</span> @[<span class="mdzsyn-keyword">:int</span>]]) <span class="mdzsyn-comment"># -&gt; 4</span></code></pre><h2 id="Using-Buffers--">Using Buffers - <code class="mendoza-code">ffi/write</code> and <code class="mendoza-code">ffi/read</code>
+(<span class="mdzsyn-coresym">ffi/size</span> [<span class="mdzsyn-keyword">:char</span> @[<span class="mdzsyn-keyword">:int</span>]]) <span class="mdzsyn-comment"># -&gt; 4</span></code></pre><h2 id="Using-Buffers---0">Using Buffers - <code class="mendoza-code">ffi/write</code> and <code class="mendoza-code">ffi/read</code>
 </h2>
 <p>While primitive types and nested struct types will be converted to and from Janet values automatically, the FFI
 will not dereference pointers for you as a general rule, with the exception of returning string types. You also
@@ -251,7 +251,7 @@ address into Janet values.
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">my-type</span> (<span class="mdzsyn-coresym">ffi/struct</span> <span class="mdzsyn-keyword">:char</span> @[<span class="mdzsyn-keyword">:int</span> <span class="mdzsyn-number">4</span>]))
 (<span class="mdzsyn-coresym">ffi/defbind</span> <span class="mdzsyn-symbol">returns_a_pointer</span> <span class="mdzsyn-keyword">:ptr</span> [])
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">pointer</span> (<span class="mdzsyn-symbol">returns_a_pointer</span>))
-(<span class="mdzsyn-coresym">pp</span> (<span class="mdzsyn-coresym">ffi/read</span> <span class="mdzsyn-symbol">my-type</span> <span class="mdzsyn-symbol">pointer</span>))</code></pre><h2 id="Getting-Function-Pointers-and-Calling-Them">Getting Function Pointers and Calling Them
+(<span class="mdzsyn-coresym">pp</span> (<span class="mdzsyn-coresym">ffi/read</span> <span class="mdzsyn-symbol">my-type</span> <span class="mdzsyn-symbol">pointer</span>))</code></pre><h2 id="Getting-Function-Pointers-and-Calling-Them-0">Getting Function Pointers and Calling Them
 </h2>
 <p>The FFI module can use any opaque pointer as a function pointer, and while usually you
 will be loading functions from native modules loaded with <code class="mendoza-code">ffi/native</code>, you
@@ -285,7 +285,7 @@ on each use.
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">buffer1</span> <span class="mdzsyn-string">@"aaaa"</span>)
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">buffer2</span> <span class="mdzsyn-string">@"bbbb"</span>)
 (<span class="mdzsyn-coresym">ffi/call</span> <span class="mdzsyn-symbol">memcpy</span> <span class="mdzsyn-symbol">signature</span> <span class="mdzsyn-symbol">buffer1</span> <span class="mdzsyn-symbol">buffer2</span> <span class="mdzsyn-number">4</span>)
-(<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-symbol">buffer1</span>) <span class="mdzsyn-comment"># prints bbbb</span></code></pre><h2 id="High-Level-API--">High-Level API - <code class="mendoza-code">ffi/context</code> and <code class="mendoza-code">ffi/defbind</code>.
+(<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-symbol">buffer1</span>) <span class="mdzsyn-comment"># prints bbbb</span></code></pre><h2 id="High-Level-API---0">High-Level API - <code class="mendoza-code">ffi/context</code> and <code class="mendoza-code">ffi/defbind</code>.
 </h2>
 <p>Using the low-level api to manually load dynamic libraries can get rather tedious, so the FFI module has a few
 macros and functions to make it easier. The function <code class="mendoza-code">ffi/context</code> is used to select a native module that
@@ -302,7 +302,7 @@ create Janet wrappers around ffi/call for you. The memcpy example from above wou
 (<span class="mdzsyn-coresym">print</span> <span class="mdzsyn-symbol">buffer1</span>) <span class="mdzsyn-comment"># prints bbbb</span></code></pre><p>This code uses <code class="mendoza-code">ffi/native</code>, <code class="mendoza-code">ffi/lookup</code>, <code class="mendoza-code">ffi/signature</code>, <code class="mendoza-code">ffi/call</code> behind the scenes, and you can mix
 and match the <code class="mendoza-code">ffi/defbind</code> macro with explicit bindings.
 </p>
-<h2 id="Callbacks">Callbacks
+<h2 id="Callbacks-0">Callbacks
 </h2>
 <p>One limitation of Janet's FFI module is passing function pointers to C functions, such as in <code class="mendoza-code">qsort</code>.
 This is unsupported in the general case, as it requires runtime generation of machine code.
@@ -313,7 +313,7 @@ that can be a sort of universal callback that would call that userdata parameter
 While this is far from general, it is effective in many cases, and so the <code class="mendoza-code">ffi/module</code> provides
 one such function pointer out of the box with <code class="mendoza-code">ffi/trampoline</code>.
 </p>
-<h2 id="GTK-Example">GTK Example
+<h2 id="GTK-Example-0">GTK Example
 </h2>
 <p>One good use for FFI bindings are interfacing with GUI libraries.
 For example, one could be building a standalone binary
@@ -383,7 +383,7 @@ like using the high-level, macro based abstraction with <code class="mendoza-cod
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

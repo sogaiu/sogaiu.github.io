@@ -124,7 +124,7 @@ bindings and its associated environment.  By default, modules correspond
 one-to-one with source files in Janet, although you may override this and
 structure modules however you like.
 </p>
-<h2 id="Installing-a-module">Installing a module
+<h2 id="Installing-a-module-0">Installing a module
 </h2>
 <p>Using <code class="mendoza-code">jpm</code>, the <code class="mendoza-code">path</code> module can be installed like so from the
 command line:
@@ -139,7 +139,7 @@ the repository in your current directory, and Janet will be able to import it as
 well. However, for more complicated packages or packages containing native C
 extensions, <code class="mendoza-code">jpm</code> will usually be much easier.
 </p>
-<h2 id="Importing-a-module">Importing a module
+<h2 id="Importing-a-module-0">Importing a module
 </h2>
 <p>To use a module, the best way is to use the <code class="mendoza-code">(import)</code> macro,
 which looks for a module with the given name on your system and
@@ -160,7 +160,7 @@ way.
 </p>
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">import</span> <span class="mdzsyn-symbol">path</span> <span class="mdzsyn-keyword">:as</span> <span class="mdzsyn-symbol">p</span>)
 
-(<span class="mdzsyn-symbol">p/join</span> (<span class="mdzsyn-coresym">os/cwd</span>) <span class="mdzsyn-string">"temp"</span>)</code></pre><h2 id="Custom-loaders-(">Custom loaders (<code class="mendoza-code">module/paths</code> and <code class="mendoza-code">module/loaders</code>)
+(<span class="mdzsyn-symbol">p/join</span> (<span class="mdzsyn-coresym">os/cwd</span>) <span class="mdzsyn-string">"temp"</span>)</code></pre><h2 id="Custom-loaders-(-0">Custom loaders (<code class="mendoza-code">module/paths</code> and <code class="mendoza-code">module/loaders</code>)
 </h2>
 <p>The <code class="mendoza-code">module/paths</code> and <code class="mendoza-code">module/loaders</code> data structures determine how
 Janet will load a given module name. <code class="mendoza-code">module/paths</code> is a list of patterns
@@ -211,7 +211,7 @@ table.  For example, the <code class="mendoza-code">:source</code> type is a thi
 <code class="mendoza-code">dofile</code>, the <code class="mendoza-code">:image</code> type is a wrapper around <code class="mendoza-code">load-image</code>, and
 the <code class="mendoza-code">:native</code> type is a wrapper around <code class="mendoza-code">native</code>.
 </p>
-<h3 id="URL-loader-example">URL loader example
+<h3 id="URL-loader-example-0">URL loader example
 </h3>
 <p>An example from <code class="mendoza-code">examples/urlloader.janet</code> in the source
 repository shows how a loader can be a wrapper around curl and
@@ -236,7 +236,7 @@ load correctly. A more robust solution would quote the URL.
 
 <span class="mdzsyn-comment"># Add the module loader and path tuple to right places</span>
 (<span class="mdzsyn-coresym">array/push</span> <span class="mdzsyn-coresym">module/paths</span> [<span class="mdzsyn-symbol">check-http-url</span> <span class="mdzsyn-keyword">:janet-http</span>])
-(<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-coresym">module/loaders</span> <span class="mdzsyn-keyword">:janet-http</span> <span class="mdzsyn-symbol">load-url</span>)</code></pre><h2 id="Relative-imports">Relative imports
+(<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-coresym">module/loaders</span> <span class="mdzsyn-keyword">:janet-http</span> <span class="mdzsyn-symbol">load-url</span>)</code></pre><h2 id="Relative-imports-0">Relative imports
 </h2>
 <p>You can include files relative to the current file by prefixing the module name
 with <code class="mendoza-code">./</code>. For example, suppose you have a file tree that is structured like
@@ -263,7 +263,7 @@ source tree and work as expected.
 <p>Note that relative imports are relative to the current file, not to the working
 directory. For that behavior, see the section on working directory imports.
 </p>
-<h3 id="Pre-loaded-Modules">Pre-loaded Modules
+<h3 id="Pre-loaded-Modules-0">Pre-loaded Modules
 </h3>
 <p>An easy way to bypass the import system and create custom modules is to manually add modules into
 <code class="mendoza-code">module/cache</code>.
@@ -279,7 +279,7 @@ pattern to allow this in a standalone executable built with <code class="mendoza
 (<span class="mdzsyn-coresym">defn</span> <span class="mdzsyn-symbol">main</span> [<span class="mdzsyn-symbol">&amp;</span> <span class="mdzsyn-symbol">args</span>]
   (<span class="mdzsyn-coresym">put</span> <span class="mdzsyn-coresym">module/cache</span> <span class="mdzsyn-string">"mod1"</span> <span class="mdzsyn-symbol">mod1</span>)
   <span class="mdzsyn-comment"># now calls to (import mod1) at runtime will succeed.</span>
-  (<span class="mdzsyn-coresym">import</span> <span class="mdzsyn-symbol">mod1</span>))</code></pre><h3 id="Working-Directory-Imports">Working Directory Imports
+  (<span class="mdzsyn-coresym">import</span> <span class="mdzsyn-symbol">mod1</span>))</code></pre><h3 id="Working-Directory-Imports-0">Working Directory Imports
 </h3>
 <p>Starting in 1.14.1, Janet will allow imports relative to the current working directory.
 This is very useful in scripting circumstances where source code must be loaded at runtime.
@@ -291,7 +291,7 @@ import system.
 <pre class="mendoza-codeblock"><code data-language="janet">(<span class="mdzsyn-coresym">import</span> <span class="mdzsyn-symbol">/local</span>)</code></pre><p>This will import from a file <code class="mendoza-code">./local.janet</code>, (or <code class="mendoza-code">./local.so</code>, <code class="mendoza-code">./local.jimage</code>, and so on), and
 prefix the imported symbols with <code class="mendoza-code">local/</code>.
 </p>
-<h2 id="Writing-a-module">Writing a module
+<h2 id="Writing-a-module-0">Writing a module
 </h2>
 <p>Writing a module in Janet is mostly about exposing only the public
 functions that you want users of your module to be able to use. All
@@ -355,7 +355,7 @@ also works in a REPL):
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>

@@ -141,7 +141,7 @@ bracket characters <code class="mendoza-code">[]</code> or calling the <code cla
 (<span class="mdzsyn-coresym">def</span> <span class="mdzsyn-symbol">mytup4</span> ~(<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">3</span> ,(<span class="mdzsyn-coresym">+</span> <span class="mdzsyn-number">2</span> <span class="mdzsyn-number">2</span>)))
 
 <span class="mdzsyn-comment"># these all result in the same tuple:</span>
-(<span class="mdzsyn-coresym">assert</span> (<span class="mdzsyn-coresym">=</span> <span class="mdzsyn-symbol">mytup1</span> <span class="mdzsyn-symbol">mytup2</span> <span class="mdzsyn-symbol">mytup3</span> <span class="mdzsyn-symbol">mytup4</span>)) <span class="mdzsyn-comment"># true</span></code></pre><h2 id="As-table-keys">As table keys
+(<span class="mdzsyn-coresym">assert</span> (<span class="mdzsyn-coresym">=</span> <span class="mdzsyn-symbol">mytup1</span> <span class="mdzsyn-symbol">mytup2</span> <span class="mdzsyn-symbol">mytup3</span> <span class="mdzsyn-symbol">mytup4</span>)) <span class="mdzsyn-comment"># true</span></code></pre><h2 id="As-table-keys-0">As table keys
 </h2>
 <p>Tuples can be used as table keys because two tuples with the same contents are
 considered equal:
@@ -153,7 +153,7 @@ considered equal:
 (<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">points</span> [<span class="mdzsyn-number">0</span> <span class="mdzsyn-number">0</span>])       <span class="mdzsyn-comment"># "A"</span>
 (<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">points</span> (<span class="mdzsyn-coresym">tuple</span> <span class="mdzsyn-number">0</span> <span class="mdzsyn-number">0</span>)) <span class="mdzsyn-comment"># "A"</span>
 (<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">points</span> [<span class="mdzsyn-number">1</span> <span class="mdzsyn-number">3</span>])       <span class="mdzsyn-comment"># "B"</span>
-(<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">points</span> [<span class="mdzsyn-number">8</span> <span class="mdzsyn-number">5</span>])       <span class="mdzsyn-comment"># nil (ie: not found)</span></code></pre><h2 id="Sorting-tuples">Sorting tuples
+(<span class="mdzsyn-coresym">get</span> <span class="mdzsyn-symbol">points</span> [<span class="mdzsyn-number">8</span> <span class="mdzsyn-number">5</span>])       <span class="mdzsyn-comment"># nil (ie: not found)</span></code></pre><h2 id="Sorting-tuples-0">Sorting tuples
 </h2>
 <p>Tuples can also be used to sort items. When sorting tuples via the <code class="mendoza-code">&lt;</code> or
 <code class="mendoza-code">&gt;</code> comparators, the first elements are compared first. If those elements
@@ -177,7 +177,7 @@ by the contents of another array.
 <span class="mdzsyn-comment"># cat: 5</span>
 <span class="mdzsyn-comment"># dog: 3</span>
 <span class="mdzsyn-comment"># ermie: 1</span>
-<span class="mdzsyn-comment"># flamingo: 23</span></code></pre><h2 id="Bracketed-tuples">Bracketed tuples
+<span class="mdzsyn-comment"># flamingo: 23</span></code></pre><h2 id="Bracketed-tuples-0">Bracketed tuples
 </h2>
 <p>Under the hood, there are two kinds of tuples: bracketed and non-bracketed. We
 have seen above that bracket tuples are used to create a tuple with <code class="mendoza-code">[]</code>
@@ -194,7 +194,7 @@ tuples differ:
 not recommended to use bracketed tuples for anything outside of macros and
 tuple constructors (ie: tuple literals).
 </p>
-<h2 id="More-functions">More functions
+<h2 id="More-functions-0">More functions
 </h2>
 <p>Most functions in the core library that work on arrays also work on tuples, or
 have an analogous function for tuples. See the <a href="/api/tuple.html">Tuple API</a>
@@ -210,7 +210,7 @@ for a list of functions that operate on tuples.
     
 <footer>
   &copy; Calvin Rose &amp; contributors 2024
-  <div class="gentag">Generated on February 28, 2024 at 04:56:31 (UTC) with Janet 1.32.1-cc5beda</div>
+  <div class="gentag">Generated on February 28, 2024 at 05:01:00 (UTC) with Janet 1.32.1-cc5beda</div>
   <div class="see-problem">See a problem? Source
     <a href="https://github.com/janet-lang/janet-lang.org">on GitHub</a></div>
 </footer>
