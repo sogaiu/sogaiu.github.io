@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="39.html">[<span style="color: orange">p</span>rev]</a> <a style="color: lightblue" id="entry" href="29.html">[en<span style="color: orange">t</span>ry]</a> [exit] <a style="color: lightblue" id="next" href="41.html">[<span style="color: orange">n</span>ext]</a> <a style="color: lightblue" id="last" href="95.html">[<span style="color: orange">l</span>ast]</a></pre><hr><pre>(meg/match ~{:close (capture (backmatch :delim)) :main (sequence :thing -1) :open (capture (sequence &quot;[&quot; (some &quot;_&quot;) &quot;]&quot;) :delim) :thing (choice (unref (sequence :open :thing :close)) (capture (any (if-not &quot;[&quot; 1))))}
+           "<span style="color: lightgreen">[__][_]</span><span style="color: red">a[_][__]</span>")</pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[&quot;[__]&quot;]</pre><pre>tagged-captures:
+  tags: @[:delim]
+  values: @[&quot;[__]&quot;]
+</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: red">exiting</span> frame <span style="color: yellow">20</span> with value: <span style="color: lightgreen">7</span></pre><pre>peg: <span style="color: yellow">(sequence &quot;[&quot; (some &quot;_&quot;) &quot;]&quot;)</span></pre><pre>text: <span style="color: lightgreen">[__][_]</span><span style="color: red">a[_][__]</span></pre><pre>index: 4 advanced to: <span style="color: lightgreen">7</span></pre><pre>matched: <span style="color: lightgreen">[_]</span></pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="29.html">20</a> (sequence &quot;[&quot; (some &quot;_&quot;) &quot;]&quot;)
+</span><a style="color: lightblue" href="28.html">19</a> (capture (sequence &quot;[&quot; (some &quot;_&quot;) &quot;]&quot;) :delim)
+<a style="color: lightblue" href="27.html">18</a> :open
+<a style="color: lightblue" href="26.html">17</a> (sequence :open :thing :close)
+<a style="color: lightblue" href="25.html">16</a> (unref (sequence :open :thing :close))
+<a style="color: lightblue" href="24.html">15</a> (choice (unref (sequence :open :thing :close)) (capture (any (if-not &quot;[&quot; 1))))
+<a style="color: lightblue" href="23.html">14</a> :thing
+<a style="color: lightblue" href="4.html">4</a> (sequence :open :thing :close)
+<a style="color: lightblue" href="3.html">3</a> (unref (sequence :open :thing :close))
+<a style="color: lightblue" href="2.html">2</a> (choice (unref (sequence :open :thing :close)) (capture (any (if-not &quot;[&quot; 1))))
+<a style="color: lightblue" href="1.html">1</a> :thing
+<a style="color: lightblue" href="0.html">0</a> (sequence :thing -1)
+</pre></body>
+</html>

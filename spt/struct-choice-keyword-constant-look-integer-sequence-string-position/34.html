@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="33.html">[<span style="color: orange">p</span>rev]</a> <a style="color: lightblue" id="entry" href="33.html">[en<span style="color: orange">t</span>ry]</a> [exit] <a style="color: lightblue" id="next" href="35.html">[<span style="color: orange">n</span>ext]</a> <a style="color: lightblue" id="last" href="83.html">[<span style="color: orange">l</span>ast]</a></pre><hr><pre>(meg/match ~{:back (look -1 (choice (sequence &quot;/&quot; (position)) :back)) :main (choice :back (constant 0))}
+           "<span style="color: lightgreen">/home/taro/.b</span><span style="color: red">ashrc</span>"
+           18)</pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[]</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: red">exiting</span> frame <span style="color: yellow">25</span> with value: <span style="color: lightgreen">nil</span></pre><pre>peg: <span style="color: yellow">&quot;/&quot;</span></pre><pre>text: <span style="color: lightgreen">/home/taro/.b</span><span style="color: red">ashrc</span></pre><pre>index: 13</pre><pre>matched: <span style="color: red">no</span></pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="33.html">25</a> &quot;/&quot;
+</span><a style="color: lightblue" href="32.html">24</a> (sequence &quot;/&quot; (position))
+<a style="color: lightblue" href="31.html">23</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="30.html">22</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="29.html">21</a> :back
+<a style="color: lightblue" href="24.html">18</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="23.html">17</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="22.html">16</a> :back
+<a style="color: lightblue" href="17.html">13</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="16.html">12</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="15.html">11</a> :back
+<a style="color: lightblue" href="10.html">8</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="9.html">7</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="8.html">6</a> :back
+<a style="color: lightblue" href="3.html">3</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="2.html">2</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="1.html">1</a> :back
+<a style="color: lightblue" href="0.html">0</a> (choice :back (constant 0))
+</pre></body>
+</html>

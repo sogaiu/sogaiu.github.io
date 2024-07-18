@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="440.html">[<span style="color: orange">p</span>rev]</a> <a style="color: lightblue" id="entry" href="438.html">[en<span style="color: orange">t</span>ry]</a> [exit] <a style="color: lightblue" id="next" href="442.html">[<span style="color: orange">n</span>ext]</a> <a style="color: lightblue" id="last" href="569.html">[<span style="color: orange">l</span>ast]</a></pre><hr><pre>(meg/match ~{:close-tag (drop (* &quot;&lt;/&quot; (cmt (* (backref :tag-name) (capture :w+)) &quot;&lt;function =&gt;&quot;) &quot;&gt;&quot;)) :main (* :tagged -1) :open-tag (* (constant :tag) &quot;&lt;&quot; (capture :w+ :tag-name) &quot;&gt;&quot;) :tagged (unref (replace (* :open-tag :value :close-tag) &quot;&lt;cfunction struct&gt;&quot;)) :untagged (capture (some (if-not &quot;&lt;&quot; 1))) :value (* (constant :value) (group (any (+ :tagged :untagged))))}
+           "<span style="color: lightgreen">&lt;p&gt;&lt;em&gt;Hello&lt;/em&gt; &lt;strong&gt;world&lt;/strong</span><span style="color: red">&gt;!&lt;/p&gt;</span>")</pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[:tag &quot;p&quot; :value {:tag &quot;em&quot; :value @[&quot;Hello&quot;]} &quot; &quot; :tag &quot;strong&quot; :value @[&quot;world&quot;] &quot;strong&quot;]</pre><pre>tagged-captures:
+  tags: @[nil :tag-name nil nil nil :tag-name nil nil nil :tag-name]
+  values: @[:tag &quot;p&quot; :value &quot; &quot; :tag &quot;strong&quot; :value &quot;world&quot; @[&quot;world&quot;] &quot;strong&quot;]
+</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: red">exiting</span> frame <span style="color: yellow">230</span> with value: <span style="color: lightgreen">nil</span></pre><pre>peg: <span style="color: yellow">:w</span></pre><pre>text: <span style="color: lightgreen">&lt;p&gt;&lt;em&gt;Hello&lt;/em&gt; &lt;strong&gt;world&lt;/strong</span><span style="color: red">&gt;!&lt;/p&gt;</span></pre><pre>index: 39</pre><pre>matched: <span style="color: red">no</span></pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="438.html">230</a> :w
+</span><a style="color: lightblue" href="413.html">217</a> (some :w)
+<a style="color: lightblue" href="412.html">216</a> :w+
+<a style="color: lightblue" href="411.html">215</a> (capture :w+)
+<a style="color: lightblue" href="408.html">213</a> (* (backref :tag-name) (capture :w+))
+<a style="color: lightblue" href="407.html">212</a> (cmt (* (backref :tag-name) (capture :w+)) &quot;&lt;function =&gt;&quot;)
+<a style="color: lightblue" href="404.html">210</a> (* &quot;&lt;/&quot; (cmt (* (backref :tag-name) (capture :w+)) &quot;&lt;function =&gt;&quot;) &quot;&gt;&quot;)
+<a style="color: lightblue" href="403.html">209</a> (drop (* &quot;&lt;/&quot; (cmt (* (backref :tag-name) (capture :w+)) &quot;&lt;function =&gt;&quot;) &quot;&gt;&quot;))
+<a style="color: lightblue" href="402.html">208</a> :close-tag
+<a style="color: lightblue" href="251.html">132</a> (* :open-tag :value :close-tag)
+<a style="color: lightblue" href="250.html">131</a> (replace (* :open-tag :value :close-tag) &quot;&lt;cfunction struct&gt;&quot;)
+<a style="color: lightblue" href="249.html">130</a> (unref (replace (* :open-tag :value :close-tag) &quot;&lt;cfunction struct&gt;&quot;))
+<a style="color: lightblue" href="248.html">129</a> :tagged
+<a style="color: lightblue" href="247.html">128</a> (+ :tagged :untagged)
+<a style="color: lightblue" href="34.html">21</a> (any (+ :tagged :untagged))
+<a style="color: lightblue" href="33.html">20</a> (group (any (+ :tagged :untagged)))
+<a style="color: lightblue" href="30.html">18</a> (* (constant :value) (group (any (+ :tagged :untagged))))
+<a style="color: lightblue" href="29.html">17</a> :value
+<a style="color: lightblue" href="4.html">4</a> (* :open-tag :value :close-tag)
+<a style="color: lightblue" href="3.html">3</a> (replace (* :open-tag :value :close-tag) &quot;&lt;cfunction struct&gt;&quot;)
+<a style="color: lightblue" href="2.html">2</a> (unref (replace (* :open-tag :value :close-tag) &quot;&lt;cfunction struct&gt;&quot;))
+<a style="color: lightblue" href="1.html">1</a> :tagged
+<a style="color: lightblue" href="0.html">0</a> (* :tagged -1)
+</pre></body>
+</html>

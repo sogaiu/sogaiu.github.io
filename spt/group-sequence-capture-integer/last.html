@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="14.html">[<span style="color: orange">p</span>rev]</a> <a style="color: lightblue" id="entry" href="0.html">[en<span style="color: orange">t</span>ry]</a> [exit] [next] [last]</pre><hr><pre>(meg/match ~(group (sequence (capture 1) (capture 1) (capture 1)))
+           "<span style="color: lightgreen">abc</span><span style="color: red"></span>")
+# =>
+<span style="color: lightgreen">@[@["a" "b" "c"]]</span></pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[@[&quot;a&quot; &quot;b&quot; &quot;c&quot;]]</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: red">exiting</span> frame <span style="color: yellow">0</span> with value: <span style="color: lightgreen">3</span></pre><pre>peg: <span style="color: yellow">(group (sequence (capture 1) (capture 1) (capture 1)))</span></pre><pre>text: <span style="color: lightgreen">abc</span><span style="color: red"></span></pre><pre>index: 0 advanced to: <span style="color: lightgreen">3</span></pre><pre>matched: <span style="color: lightgreen">abc</span></pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="0.html">0</a> (group (sequence (capture 1) (capture 1) (capture 1)))
+</span></pre></body>
+</html>

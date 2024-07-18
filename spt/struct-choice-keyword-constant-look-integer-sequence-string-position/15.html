@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="14.html">[<span style="color: orange">p</span>rev]</a> [entry] <a style="color: lightblue" id="exit" href="76.html">[e<span style="color: orange">x</span>it]</a> <a style="color: lightblue" id="next" href="16.html">[<span style="color: orange">n</span>ext]</a> <a style="color: lightblue" id="last" href="83.html">[<span style="color: orange">l</span>ast]</a></pre><hr><pre>(meg/match ~{:back (look -1 (choice (sequence &quot;/&quot; (position)) :back)) :main (choice :back (constant 0))}
+           "<span style="color: lightgreen">/home/taro/.bash</span><span style="color: red">rc</span>"
+           18)</pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[]</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: lightgreen">entered</span> frame <span style="color: yellow">11</span></pre><pre>peg: <span style="color: yellow">:back</span></pre><pre>text: <span style="color: lightgreen">/home/taro/.bash</span><span style="color: red">rc</span></pre><pre>index: 16</pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="15.html">11</a> :back
+</span><a style="color: lightblue" href="10.html">8</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="9.html">7</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="8.html">6</a> :back
+<a style="color: lightblue" href="3.html">3</a> (choice (sequence &quot;/&quot; (position)) :back)
+<a style="color: lightblue" href="2.html">2</a> (look -1 (choice (sequence &quot;/&quot; (position)) :back))
+<a style="color: lightblue" href="1.html">1</a> :back
+<a style="color: lightblue" href="0.html">0</a> (choice :back (constant 0))
+</pre></body>
+</html>

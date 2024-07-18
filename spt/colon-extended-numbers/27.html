@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function handleKbdEvent(event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+  const keyName = event.key;
+
+  if (keyName === "?") {
+    document.getElementById('help').click();
+  } else if (keyName === "u") {
+    document.getElementById('up').click();
+  } else if (keyName === "g") {
+    document.getElementById('log').click();
+  } else if (keyName === "f") {
+    document.getElementById('first').click();
+  } else if (keyName === "p") {
+    document.getElementById('prev').click();
+  } else if (keyName === "t") {
+    document.getElementById('entry').click();
+  } else if (keyName === "x") {
+    document.getElementById('exit').click();
+  } else if (keyName === "n") {
+    document.getElementById('next').click();
+  } else if (keyName === "l") {
+    document.getElementById('last').click();
+  } else {
+    //
+  }
+
+  console.log(event);
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+document.addEventListener("keydown", handleKbdEvent);
+</script></head>
+<body style="color: lightgrey; background-color: black">
+<pre><a style="color: lightblue" id="up" href="..">[<span style="color: orange">u</span>p]</a> <a style="color: lightblue" id="log" href="log.html">[lo<span style="color: orange">g</span>]</a> <a style="color: lightblue" id="help" href="help.html">[<span style="color: orange">?</span>]</a>
+<a style="color: lightblue" id="first" href="0.html">[<span style="color: orange">f</span>irst]</a> <a style="color: lightblue" id="prev" href="26.html">[<span style="color: orange">p</span>rev]</a> [entry] <a style="color: lightblue" id="exit" href="28.html">[e<span style="color: orange">x</span>it]</a> <a style="color: lightblue" id="next" href="28.html">[<span style="color: orange">n</span>ext]</a> <a style="color: lightblue" id="last" href="37.html">[<span style="color: orange">l</span>ast]</a></pre><hr><pre>(meg/match ~{:main (drop (sequence (cmt (capture (some :name-char)) &quot;&lt;cfunction scan-number&gt;&quot;) &quot;:&quot; (range &quot;AZ&quot; &quot;az&quot;))) :name-char (choice (range &quot;09&quot; &quot;AZ&quot; &quot;az&quot; &quot;\x80\xFF&quot;) (set &quot;!$%&amp;*+-./:&lt;?=&gt;@^_&quot;))}
+           "<span style="color: lightgreen">2:u</span><span style="color: red"></span>")</pre><hr><pre><u>captures and tags</u></pre><pre>captures: @[]</pre><hr><pre><u>current frame</u></pre><pre>status: <span style="color: lightgreen">entered</span> frame <span style="color: yellow">17</span></pre><pre>peg: <span style="color: yellow">(range &quot;09&quot; &quot;AZ&quot; &quot;az&quot; &quot;\x80\xFF&quot;)</span></pre><pre>text: <span style="color: lightgreen">2:u</span><span style="color: red"></span></pre><pre>index: 3</pre><hr><pre><u>frames call stack</u></pre><pre><span style="color: yellow"><a style="color: yellow" href="27.html">17</a> (range &quot;09&quot; &quot;AZ&quot; &quot;az&quot; &quot;\x80\xFF&quot;)
+</span><a style="color: lightblue" href="26.html">16</a> (choice (range &quot;09&quot; &quot;AZ&quot; &quot;az&quot; &quot;\x80\xFF&quot;) (set &quot;!$%&amp;*+-./:&lt;?=&gt;@^_&quot;))
+<a style="color: lightblue" href="25.html">15</a> :name-char
+<a style="color: lightblue" href="4.html">4</a> (some :name-char)
+<a style="color: lightblue" href="3.html">3</a> (capture (some :name-char))
+<a style="color: lightblue" href="2.html">2</a> (cmt (capture (some :name-char)) &quot;&lt;cfunction scan-number&gt;&quot;)
+<a style="color: lightblue" href="1.html">1</a> (sequence (cmt (capture (some :name-char)) &quot;&lt;cfunction scan-number&gt;&quot;) &quot;:&quot; (range &quot;AZ&quot; &quot;az&quot;))
+<a style="color: lightblue" href="0.html">0</a> (drop (sequence (cmt (capture (some :name-char)) &quot;&lt;cfunction scan-number&gt;&quot;) &quot;:&quot; (range &quot;AZ&quot; &quot;az&quot;)))
+</pre></body>
+</html>
