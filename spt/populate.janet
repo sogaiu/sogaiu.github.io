@@ -4,6 +4,7 @@
   (string (dyn :syspath) "/spt/trace/samples"))
 
 (each filepath (os/dir samples-path)
+  (print "* " filepath)
   (def full-path (string samples-path "/" filepath))
   (def not-including-extension
     (last (string/find-all "." full-path)))
@@ -26,3 +27,6 @@
     # produce new stuff
     (tg/gen-files (slurp full-path) false dir-path false)))
 
+(print)
+(print "Note that at least one bit of error output is normal as it is")
+(print "a side-effect of meg/match processing.")
